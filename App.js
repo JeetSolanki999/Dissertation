@@ -1,20 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Tabs from "./Navigation/navbar";
+import Splash from "./Screens/Splash";
+import Login from "./Screens/Login";
+import Signup from "./Screens/Signup";
+import ForgotPassword from "./Screens/ForgotPassword";
+import Wallet from "./Screens/Wallet";
 
-export default function App() {
+const App = () => {
+  const Stack = createStackNavigator();
+
+  const globalScreenOptions = {
+    headerShown: false,
+  };
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={globalScreenOptions}>
+        <Stack.Screen name="Splash" component={Splash} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+        <Stack.Screen name="Tabs" component={Tabs} />
+        <Stack.Screen name="Wallet" component={Wallet} />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+        {/* <Login /> */}
+        {/* <Tabs /> */}
+        {/* <Signup /> */}
+        {/* <ForgotPassword /> */}
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+// function getWidth() {
+//   let width = Dimensions.get("window").width;
+//   width = width - 60;
+//   return width / 5;
+// }
+
+// screenOptions={{
+//   tabBarShowLabel: false,
+
+export default App;

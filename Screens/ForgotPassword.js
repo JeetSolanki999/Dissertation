@@ -1,0 +1,121 @@
+import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import React from "react";
+import { TextInput } from "react-native-gesture-handler";
+
+const ForgotPassword = ({ navigation }) => {
+  return (
+    <View style={styles.bg}>
+      <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+        <Image
+          source={require("../assets/WhiteArrow_Icon.png")}
+          resizeMode="contain"
+          style={{
+            width: 29,
+            height: 28,
+            top: 90,
+            left: 10,
+          }}
+        />
+      </TouchableOpacity>
+
+      <Image
+        source={require("../assets/forgot-password.png")}
+        resizeMode="contain"
+        style={{
+          width: 209,
+          height: 158,
+          top: 90,
+          left: 120,
+        }}
+      />
+
+      <Text style={styles.text}> Forgot Password ?</Text>
+
+      <Text style={styles.text2}> Don't worry! It happens 😅</Text>
+      <Text style={styles.text2}> Please enter the e-mail address </Text>
+      <Text style={styles.text2}> associated with your account</Text>
+
+      <Text style={{ left: 48, top: 235, fontSize: 17 }}> Email </Text>
+
+      <TextInput
+        style={{
+          marginTop: 40,
+          width: 332,
+          height: 43,
+          borderRadius: 5,
+          backgroundColor: "#EAEAED",
+          paddingLeft: 10,
+          left: 50,
+          top: 210,
+          shadowOffset: { width: 0, height: 6 },
+          shadowColor: "black",
+          shadowOpacity: 0.2,
+        }}
+        placeholder="Enter your e-mail"
+      />
+      <View style={styles.pic}>
+        <Image
+          source={require("../assets/email.png")}
+          resizeMode="contain"
+          style={{
+            width: 29,
+            height: 28,
+            top: 177,
+            left: 345,
+          }}
+        />
+      </View>
+
+      <View style={styles.Button}>
+        <TouchableOpacity onPress={() => alert("Check your mail")}>
+          <Text style={{ textAlign: "center", color: "#fff", fontSize: 24 }}>
+            Reset my Password
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+export default ForgotPassword;
+
+const styles = StyleSheet.create({
+  bg: {
+    height: 490,
+    width: 450,
+    backgroundColor: "#0F4D92",
+  },
+
+  text: {
+    color: "#fff",
+    textAlign: "center",
+    top: 100,
+    fontSize: 30,
+    left: -11,
+  },
+
+  text2: {
+    color: "#fff",
+    textAlign: "center",
+    fontSize: 20,
+    top: 130,
+    left: -10,
+    lineHeight: 25,
+  },
+
+  Button: {
+    backgroundColor: "#0F4D92",
+    borderRadius: 15,
+    width: 313,
+    height: 70,
+    justifyContent: "center",
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.5,
+    top: 250,
+    left: 59,
+  },
+});
