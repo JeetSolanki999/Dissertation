@@ -5,11 +5,7 @@ import { Input } from "react-native-elements";
 import PasswordInputText from "react-native-hide-show-password-input";
 
 const Signup = () => {
-  return (
-    <View style={styles.bg}>
-      
-    </View>
-  );
+  return <View style={styles.bg}></View>;
 };
 
 export default Signup;

@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View, Button } from "react-native";
 import React from "react";
+import Tabs from "../Navigation/navbar";
 
-const Wallet = ({ Navigation }) => {
+const Wallet = () => {
   return (
     <View style={styles.container}>
       <Text>Wallet</Text>
