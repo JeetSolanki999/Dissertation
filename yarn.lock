@@ -3000,6 +3000,11 @@
   dependencies:
     "fontfaceobserver" "^2.1.0"
 
+"expo-haptics@^11.1.1":
+  "integrity" "sha512-Z1qRr9/lPInLhTtyjFyLqPC4edg1G/qlWCShFXNz5eJHOnotOv8qpIKDOvPYPrG3XsJc8UO8ds2Z3qmBUApEUA=="
+  "resolved" "https://registry.npmjs.org/expo-haptics/-/expo-haptics-11.1.1.tgz"
+  "version" "11.1.1"
+
 "expo-keep-awake@~10.0.2":
   "integrity" "sha512-Ro1lgyKldbFs4mxhWM+goX9sg0S2SRR8FiJJeOvaRzf8xNhrZfWA00Zpr+/3ocCoWQ3eEL+X9UF4PXXHf0KoOg=="
   "resolved" "https://registry.npmjs.org/expo-keep-awake/-/expo-keep-awake-10.0.2.tgz"
@@ -3023,6 +3028,13 @@
   dependencies:
     "compare-versions" "^3.4.0"
     "invariant" "^2.2.4"
+
+"expo-screen-orientation@^4.1.2":
+  "integrity" "sha512-ZK9JnIuys3bL0IPIkBazBwc6dZambm2xxu0TEV7HYtowb769XLTFOJgVttrpeNDMXEt/22+dhCE4ZFaPNu6JlA=="
+  "resolved" "https://registry.npmjs.org/expo-screen-orientation/-/expo-screen-orientation-4.1.2.tgz"
+  "version" "4.1.2"
+  dependencies:
+    "@expo/config-plugins" "^4.0.2"
 
 "expo-splash-screen@~0.14.0":
   "integrity" "sha512-X25D/0E2AWEFGgDWIVXZ5Bl7FhYk7TgVhEWvplBqrDY7G7vg5l1aoH6PelOQINWPsa1dcRyA7REdN2ltO+0LAw=="
@@ -5231,6 +5243,11 @@
     "react-native-screens" "^3.4.0"
     "string-hash-64" "^1.0.3"
 
+"react-native-responsive-screen@^1.4.2":
+  "integrity" "sha512-BLYz0UUpeohrib7jbz6wDmtBD5OmiuMRko4IT8kIF63taXPod/c5iZgmWnr5qOnK8hMuKiGMvsM3sC+eHX/lEQ=="
+  "resolved" "https://registry.npmjs.org/react-native-responsive-screen/-/react-native-responsive-screen-1.4.2.tgz"
+  "version" "1.4.2"
+
 "react-native-safe-area-context@^3.1.9", "react-native-safe-area-context@>= 3.0.0", "react-native-safe-area-context@3.3.2":
   "integrity" "sha512-yOwiiPJ1rk+/nfK13eafbpW6sKW0jOnsRem2C1LPJjM3tfTof6hlvV5eWHATye3XOpu2cJ7N+HdkUvUDGwFD2Q=="
   "resolved" "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-3.3.2.tgz"
@@ -5304,7 +5321,7 @@
     "normalize-css-color" "^1.0.2"
     "prop-types" "^15.6.0"
 
-"react-native@*", "react-native@>=0.55.0", "react-native@>=0.57", "react-native@>=0.64.0-rc.0 || 0.0.0-*", "react-native@0.64.3":
+"react-native@*", "react-native@>=0.35", "react-native@>=0.55.0", "react-native@>=0.57", "react-native@>=0.64.0-rc.0 || 0.0.0-*", "react-native@0.64.3":
   "integrity" "sha512-2OEU74U0Ek1/WeBzPbg6XDsCfjF/9fhrNX/5TFgEiBKd5mNc9LOZ/OlMmkb7iues/ZZ/oc51SbEfLRQdcW0fVw=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.64.3.tgz"
   "version" "0.64.3"

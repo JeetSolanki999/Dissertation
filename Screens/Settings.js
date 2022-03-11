@@ -33,8 +33,8 @@ const Settings = ({ navigation }) => {
             style={{
               left: 115,
               top: -10,
-              borderWidth: 1,
-              borderColor: "#f4f3f4",
+              borderWidth: 0.5,
+              borderColor: "#ffffff",
               borderRadius: 15,
             }}
           />
@@ -52,9 +52,15 @@ const Settings = ({ navigation }) => {
           source={require("../assets/accessibility.png")}
           style={styles.image}
         />
-        <Text style={styles.text}> Help and Feedback </Text>
+
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Helpandfeedback")}
+        >
+          <Text style={styles.text}> Help and Feedback </Text>
+        </TouchableOpacity>
         <View style={styles.line}></View>
         <Image source={require("../assets/Help.png")} style={styles.image} />
+
         <Text style={styles.text}> Terms and Conditions</Text>
         <View style={styles.line}></View>
         <Image source={require("../assets/tandc.png")} style={styles.image} />

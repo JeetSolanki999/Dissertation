@@ -1,14 +1,23 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  Button,
+} from "react-native";
 import React, { useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
 import { KeyboardAvoidingView } from "react-native";
 import Splash from "./Splash";
+import * as Haptics from "expo-haptics";
 
 const Login = ({ navigation }) => {
   const [isSecureEntry, setIsSecureEntry] = useState(true);
   return (
     <View style={styles.bg}>
-      <TouchableOpacity onPress={() => navigation.navigate("Splash")}>
+      <Button title="Success" onPress={() => navigation.navigate("Splash")}>
         <Image
           source={require("../assets/WhiteArrow_Icon.png")}
           resizeMode="contain"
@@ -19,7 +28,7 @@ const Login = ({ navigation }) => {
             left: 10,
           }}
         />
-      </TouchableOpacity>
+      </Button>
 
       <Text style={styles.login}>Login</Text>
       <Text style={styles.welcome}>Welcome Back 😁</Text>
@@ -93,7 +102,14 @@ const Login = ({ navigation }) => {
         </TouchableOpacity>
 
         <View style={styles.Button}>
-          <TouchableOpacity onPress={() => navigation.navigate("Tabs")}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Tabs")}
+            onPressOut={() =>
+              Haptics.notificationAsync(
+                Haptics.NotificationFeedbackType.Success
+              )
+            }
+          >
             <Text style={{ textAlign: "center", color: "#fff", fontSize: 24 }}>
               Login
             </Text>
@@ -191,6 +207,7 @@ const styles = StyleSheet.create({
 
   Button: {
     backgroundColor: "#0F4D92",
+    display: "flex",
     borderRadius: 15,
     width: 313,
     height: 70,
