@@ -12,6 +12,10 @@ import { TextInput } from "react-native-gesture-handler";
 import { KeyboardAvoidingView } from "react-native";
 import Splash from "./Splash";
 import * as Haptics from "expo-haptics";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 const Login = ({ navigation }) => {
   const [isSecureEntry, setIsSecureEntry] = useState(true);
@@ -78,24 +82,28 @@ const Login = ({ navigation }) => {
           }}
           placeholder="Enter your Password"
           secureTextEntry={isSecureEntry}
-          icon={
-            <TouchableOpacity
-              onPress={() => {
-                setIsSecureEntry((prev) => !prev);
-              }}
-            >
-              <Text>
-                {isSecureEntry
-                  ? require("../assets/show.png")
-                  : require("../assets/hide.png")}
-              </Text>
-            </TouchableOpacity>
-          }
         />
+        <TouchableOpacity
+          onPress={() => {
+            setIsSecureEntry((prev) => !prev);
+          }}
+        >
+          {isSecureEntry ? (
+            <Image
+              source={require("../assets/show.png")}
+              style={{ height: 25, width: 25, bottom: 215, left: 310 }}
+            />
+          ) : (
+            <Image
+              source={require("../assets/hide.png")}
+              style={{ height: 25, width: 25, bottom: 215, left: 310 }}
+            />
+          )}
+        </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.navigate("ForgotPassword")}>
           <Text
-            style={{ left: 220, bottom: 120, color: "#0F4D92", fontSize: 15 }}
+            style={{ left: 220, top: -170, color: "#0F4D92", fontSize: 15 }}
           >
             Forgot Password ?
           </Text>
@@ -209,8 +217,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#0F4D92",
     display: "flex",
     borderRadius: 15,
-    width: 313,
-    height: 70,
+    top: -125,
+    width: "87%",
+    height: "15%",
     justifyContent: "center",
     shadowOffset: {
       width: 0,

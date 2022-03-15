@@ -7,10 +7,11 @@ import {
   Button,
   ScrollView,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import * as Haptics from "expo-haptics";
 
 const Helpandfeedback = ({ navigation }) => {
+  const [isSecureEntry, setIsSecureEntry] = useState(true);
   return (
     <ScrollView style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
@@ -35,6 +36,18 @@ const Helpandfeedback = ({ navigation }) => {
           Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
         }
       />
+
+      <TouchableOpacity
+        onPress={() => {
+          setIsSecureEntry((prev) => !prev);
+        }}
+      >
+        <Text> 
+          {isSecureEntry
+            ? "show"
+            : "hide"}
+        </Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };
