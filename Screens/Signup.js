@@ -4,8 +4,12 @@ import { TextInput } from "react-native-gesture-handler";
 import { Input } from "react-native-elements";
 import PasswordInputText from "react-native-hide-show-password-input";
 
-const Signup = () => {
-  return <View style={styles.bg}></View>;
+const Signup = ({ navigation }) => {
+  return (
+    <View style={styles.bg}>
+      <Text> Hello</Text>
+    </View>
+  );
 };
 
 export default Signup;

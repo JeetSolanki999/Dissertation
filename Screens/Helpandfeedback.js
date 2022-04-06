@@ -8,46 +8,32 @@ import {
   ScrollView,
 } from "react-native";
 import React, { useState } from "react";
-import * as Haptics from "expo-haptics";
 
 const Helpandfeedback = ({ navigation }) => {
-  const [isSecureEntry, setIsSecureEntry] = useState(true);
   return (
     <ScrollView style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
         <Image
           source={require("../assets/WhiteArrow_Icon.png")}
           resizeMode="contain"
-          style={{
-            width: 29,
-            height: 28,
-            bottom: 350,
-            left: -180,
-          }}
+          style={styles.arrow}
         />
       </TouchableOpacity>
       <View>
-        <Text style={styles.settings}> Help and Feedback </Text>
+        <Text style={styles.hf}> Help and Feedback </Text>
+
+        <View style={styles.card}>
+          <Text>Hi there, </Text>
+          <Text>
+            {" "}
+            This is my first phone based application. I would love to hear your
+            feedback!😊 You can contact through mail or send message via the
+            feedback form. Thanks JS.{" "}
+          </Text>
+
+          <Text style={styles.sty}> Hello</Text>
+        </View>
       </View>
-
-      <Button
-        title="Success"
-        onPress={() =>
-          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
-        }
-      />
-
-      <TouchableOpacity
-        onPress={() => {
-          setIsSecureEntry((prev) => !prev);
-        }}
-      >
-        <Text> 
-          {isSecureEntry
-            ? "show"
-            : "hide"}
-        </Text>
-      </TouchableOpacity>
     </ScrollView>
   );
 };
@@ -59,10 +45,35 @@ const styles = StyleSheet.create({
     backgroundColor: "#0F4D92",
   },
 
-  settings: {
+  arrow: {
+    width: 29,
+    bottom: 150,
+    left: 10,
+  },
+
+  hf: {
     textAlign: "center",
-    bottom: -32,
+    top: -370,
     color: "#fff",
     fontSize: 30,
+  },
+
+  card: {
+    height: 510,
+    width: 363,
+    backgroundColor: "#fff",
+    borderRadius: 15,
+    right: -33,
+    top: -310,
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.5,
+  },
+
+  sty: {
+    color: "#000",
   },
 });

@@ -10,7 +10,7 @@ const Splash = ({ navigation }) => {
 
       <View style={styles.Button}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Login")}
+          onPress={() => navigation.navigate("Signup")}
           style={{ backgroundColor: "#FFFFFF", width: "50", height: "20" }}
         >
           <Text

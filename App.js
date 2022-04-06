@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -30,14 +30,5 @@ const App = () => {
     </NavigationContainer>
   );
 };
-
-// function getWidth() {
-//   let width = Dimensions.get("window").width;
-//   width = width - 60;
-//   return width / 5;
-// }
-
-// screenOptions={{
-//   tabBarShowLabel: false,
 
 export default App;
