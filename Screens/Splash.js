@@ -1,5 +1,9 @@
 import { StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
 import React from "react";
+import {
+  heightPercentageToDP,
+  widthPercentageToDP,
+} from "react-native-responsive-screen";
 
 const Splash = ({ navigation }) => {
   return (
@@ -37,7 +41,8 @@ export default Splash;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: heightPercentageToDP("100%"),
+    width: widthPercentageToDP("100%"),
     backgroundColor: "#0F4D92",
     alignItems: "center",
     justifyContent: "center",
@@ -79,7 +84,7 @@ const styles = StyleSheet.create({
   link: {
     color: "#fff",
     fontSize: 15,
-    top: 65,
+    top: 100,
     fontSize: 24,
     justifyContent: "center",
   },

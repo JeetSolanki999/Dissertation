@@ -149,12 +149,26 @@ const Login = ({ navigation }) => {
               </TouchableOpacity>
             </View>
           </View>
+
+          <View style={{
+            justifyContent: "center",
+            alignItems: "center",
+            top: 200,
+            
+          }}>
+            <Text style={{
+              fontSize: 18,
+              color: "#0F4D92",
+            }}>- Or Sign in with -</Text>
+          </View>
+
           <View
             style={{
               flexDirection: "row",
               justifyContent: "center",
               alignItems: "center",
               left: -10,
+              top: 15,
             }}
           >
             <TouchableOpacity>
@@ -193,7 +207,7 @@ export default Login;
 
 const styles = StyleSheet.create({
   bg: {
-    height: heightPercentageToDP("50%"),
+    height: heightPercentageToDP("60%"),
     width: widthPercentageToDP("100%"),
     backgroundColor: "#0F4D92",
   },
@@ -220,7 +234,7 @@ const styles = StyleSheet.create({
     top: 115,
     color: "#fff",
     fontSize: 30,
-    left: -9,
+    left: 5,
   },
 
   welcome: {
@@ -228,7 +242,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 15,
     top: 125,
-    left: -5,
+    left: 5,
   },
 
   card: {
@@ -252,6 +266,11 @@ const styles = StyleSheet.create({
     lineHeight: 120,
     left: 15,
     fontWeight: "bold",
+  },
+
+  sign: {
+    bottom: -50,
+    left: -10,
   },
 
   pic: {

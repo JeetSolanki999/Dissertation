@@ -1,11 +1,10 @@
 {
   "name": "digi-pocket",
   "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web",
     "eject": "expo eject"
   },
@@ -17,12 +16,15 @@
     "@react-navigation/bottom-tabs": "^6.2.0",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/stack": "^6.1.1",
+    "@stripe/stripe-react-native": "^0.6.0",
     "@use-expo/font": "^2.0.0",
-    "expo": "^44.0.6",
+    "expo": "^1.0.0",
     "expo-app-loading": "~1.3.0",
+    "expo-dev-client": "^0.8.4",
     "expo-font": "~10.0.4",
     "expo-haptics": "^11.1.1",
     "expo-screen-orientation": "^4.1.2",
+    "expo-splash-screen": "~0.14.1",
     "expo-status-bar": "~1.2.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
@@ -30,6 +32,7 @@
     "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "~2.1.0",
     "react-native-hide-show-password-input": "^1.2.0",
+    "react-native-nfc-manager": "^3.13.2",
     "react-native-payment-card": "^1.0.61",
     "react-native-reanimated": "~2.3.1",
     "react-native-responsive-screen": "^1.4.2",
@@ -39,7 +42,9 @@
     "react-native-size-matters": "^0.4.0",
     "react-native-vector-icons": "^9.1.0",
     "react-native-web": "0.17.1",
-    "react-router-dom": "^6.2.2"
+    "react-router-dom": "^6.2.2",
+    "tipsi-stripe": "^9.2.0",
+    "yarn": "^1.22.18"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
