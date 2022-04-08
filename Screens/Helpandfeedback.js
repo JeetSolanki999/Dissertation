@@ -51,7 +51,7 @@ const Helpandfeedback = ({ navigation }) => {
             fontFamily: "Comfortaa",
             fontSize: 14,
           }}
-          placeholder="Type your Feedback here"
+          placeholder="Write something"
         />
 
         <View style={styles.star}>
