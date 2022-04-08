@@ -10,9 +10,19 @@ import ForgotPassword from "./Screens/ForgotPassword";
 import Helpandfeedback from "./Screens/Helpandfeedback";
 import Settings from "./Screens/Settings";
 import { StripeProvider } from "@stripe/stripe-react-native";
+import { useFonts } from "expo-font";
 
 const App = () => {
   const Stack = createStackNavigator();
+
+  const [loaded] = useFonts({
+    Comfortaa: require("./assets/Fonts/Comfortaa.ttf"),
+    // NEW FONT
+  });
+
+  if (!loaded) {
+    return null;
+  }
 
   const globalScreenOptions = {
     headerShown: false,

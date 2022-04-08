@@ -31,7 +31,7 @@ const Settings = ({ navigation }) => {
             onValueChange={() => setIsEnabled(!isEnabled)}
             trackColor={{ false: "#767577", true: "#05A605" }}
             style={{
-              left: 115,
+              left: 89,
               top: -10,
               borderWidth: 0.5,
               borderColor: "#ffffff",
@@ -67,12 +67,13 @@ const Settings = ({ navigation }) => {
       </View>
 
       <View style={styles.Button}>
-        <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Splash")}>
           <Text
             style={{
               textAlign: "center",
               color: "#0F4D92",
               fontSize: 24,
+              fontFamily: "Comfortaa",
             }}
           >
             Log Out
@@ -93,13 +94,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-  toggle: {
-    left: 130,
-    bottom: -158,
-  },
-
   line: {
-    height: 3,
+    height: 2,
     width: 300,
     borderRadius: 10,
     backgroundColor: "#fff",
@@ -112,13 +108,15 @@ const styles = StyleSheet.create({
     top: -70,
     color: "#fff",
     fontSize: 30,
+    fontFamily: "Comfortaa",
   },
 
   text: {
     fontSize: 25,
     color: "#fff",
-    left: 30,
+    left: 20,
     bottom: 10,
+    fontFamily: "Comfortaa",
   },
 
   Button: {

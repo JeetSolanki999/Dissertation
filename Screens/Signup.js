@@ -35,7 +35,7 @@ const Signup = ({ navigation }) => {
               style={{
                 width: 29,
                 height: 28,
-                top: 90,
+                top: 80,
                 left: 10,
               }}
             />
@@ -63,10 +63,12 @@ const Signup = ({ navigation }) => {
                   paddingLeft: 10,
                   left: -22,
                   top: 50,
+                  fontFamily: "Comfortaa",
+                  fontSize: 14,
                 }}
                 placeholder="First Name"
-                errorStyle={{ color: "red" }}
-                errorMessage="ENTER A VALID ERROR HERE"
+                // errorStyle={{ color: "red" }}
+                // errorMessage="ENTER A VALID ERROR HERE"
               />
 
               <View>
@@ -92,10 +94,12 @@ const Signup = ({ navigation }) => {
                   paddingLeft: 10,
                   left: -18,
                   top: 50,
+                  fontFamily: "Comfortaa",
+                  fontSize: 14,
                 }}
                 placeholder="Last Name"
-                errorStyle={{ color: "red" }}
-                errorMessage="ENTER A VALID ERROR HERE"
+                // errorStyle={{ color: "red" }}
+                // errorMessage="ENTER A VALID ERROR HERE"
               />
 
               <Image
@@ -124,10 +128,11 @@ const Signup = ({ navigation }) => {
                   left: 15,
                   paddingLeft: 10,
                   top: -320,
+                  fontFamily: "Comfortaa",
+                  fontSize: 14,
                 }}
                 placeholder="Enter your e-mail"
-                errorStyle={{ color: "red" }}
-                errorMessage="ENTER A VALID ERROR HERE"
+                autoCapitalize="none"
               />
               <Image
                 source={require("../assets/email.png")}
@@ -155,9 +160,12 @@ const Signup = ({ navigation }) => {
                   left: 15,
                   paddingLeft: 10,
                   top: -455,
+                  fontFamily: "Comfortaa",
+                  fontSize: 14,
                 }}
                 placeholder="Enter your password"
                 secureTextEntry={isSecureEntry}
+                autoCapitalize="none"
               />
               <TouchableOpacity
                 onPress={() => {
@@ -192,9 +200,12 @@ const Signup = ({ navigation }) => {
                   left: 15,
                   paddingLeft: 10,
                   top: -580,
+                  fontFamily: "Comfortaa",
+                  fontSize: 14,
                 }}
                 placeholder="Confirm your password"
                 secureTextEntry={isSecureEntry}
+                autoCapitalize="none"
               />
               <TouchableOpacity
                 onPress={() => {
@@ -230,8 +241,8 @@ const Signup = ({ navigation }) => {
                   textAlign: "center",
                   color: "#fff",
                   fontSize: 24,
-                  fontWeight: "bold",
                   bottom: -35,
+                  fontFamily: "Comfortaa",
                 }}
               >
                 Sign Up
@@ -242,13 +253,14 @@ const Signup = ({ navigation }) => {
               style={{
                 justifyContent: "center",
                 alignItems: "center",
-                top: 110,
+                top: 120,
               }}
             >
               <Text
                 style={{
-                  fontSize: 18,
+                  fontSize: 16,
                   color: "#0F4D92",
+                  fontFamily: "Comfortaa",
                 }}
               >
                 - Or Sign up with -
@@ -266,7 +278,7 @@ const Signup = ({ navigation }) => {
             >
               <TouchableOpacity>
                 <View style={styles.belowbtn}>
-                  <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+                  <Text style={{ fontFamily: "Comfortaa", fontSize: 16 }}>
                     {" "}
                     Sign in with{" "}
                   </Text>
@@ -279,7 +291,7 @@ const Signup = ({ navigation }) => {
               <View style={{ width: 10 }}></View>
               <TouchableOpacity>
                 <View style={styles.belowbtn}>
-                  <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+                  <Text style={{ fontFamily: "Comfortaa", fontSize: 16 }}>
                     {" "}
                     Sign in with{" "}
                   </Text>
@@ -314,7 +326,7 @@ const styles = StyleSheet.create({
     borderColor: "#0F4D92",
     borderRadius: 10,
     borderWidth: 1,
-    bottom: -210,
+    bottom: -220,
     paddingHorizontal: 10,
   },
 
@@ -325,7 +337,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     alignItems: "center",
     justifyContent: "center",
-    top: 10,
+    top: 20,
     left: 42,
     shadowOffset: {
       width: 0,
@@ -341,6 +353,7 @@ const styles = StyleSheet.create({
     lineHeight: 120,
     left: 15,
     fontWeight: "bold",
+    fontFamily: "Comfortaa",
   },
 
   h1: {
@@ -348,7 +361,7 @@ const styles = StyleSheet.create({
     top: 100,
     color: "#fff",
     fontSize: 30,
-    left: 5,
+    fontFamily: "Comfortaa",
   },
 
   card: {
@@ -357,7 +370,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 15,
     right: -21,
-    top: 115,
+    top: 125,
     shadowOffset: {
       width: 0,
       height: 10,
@@ -370,14 +383,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     top: -20,
-    right: 155,
+    right: 150,
   },
 
   heading2: {
     flexDirection: "row",
     justifyContent: "space-evenly",
     top: -138,
-    left: 35,
+    left: 40,
   },
 
   headingem: {

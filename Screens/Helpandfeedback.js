@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     top: -370,
     color: "#fff",
     fontSize: 30,
+    fontFamily: "Comfortaa",
   },
 
   card: {

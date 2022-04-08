@@ -313,8 +313,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.name.DigiPocket;
-				PRODUCT_NAME = DigiPocket;
+				PRODUCT_BUNDLE_IDENTIFIER = "IOS";
+				PRODUCT_NAME = IOS;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -336,8 +336,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.name.DigiPocket;
-				PRODUCT_NAME = DigiPocket;
+				PRODUCT_BUNDLE_IDENTIFIER = "IOS";
+				PRODUCT_NAME = IOS;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

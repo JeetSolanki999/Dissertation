@@ -12,7 +12,7 @@ const ForgotPassword = ({ navigation }) => {
           style={{
             width: 29,
             height: 28,
-            top: 90,
+            top: 80,
             left: 10,
           }}
         />
@@ -35,7 +35,12 @@ const ForgotPassword = ({ navigation }) => {
       <Text style={styles.text2}> Please enter the e-mail address </Text>
       <Text style={styles.text2}> associated with your account</Text>
 
-      <Text style={{ left: 48, top: 235, fontSize: 17 }}> Email </Text>
+      <Text
+        style={{ left: 48, top: 235, fontSize: 17, fontFamily: "Comfortaa" }}
+      >
+        {" "}
+        Email{" "}
+      </Text>
 
       <TextInput
         style={{
@@ -50,7 +55,10 @@ const ForgotPassword = ({ navigation }) => {
           shadowOffset: { width: 0, height: 6 },
           shadowColor: "black",
           shadowOpacity: 0.2,
+          fontFamily: "Comfortaa",
+          fontSize: 14,
         }}
+        autoCapitalize="none"
         placeholder="Enter your e-mail"
       />
       <View style={styles.pic}>
@@ -68,7 +76,14 @@ const ForgotPassword = ({ navigation }) => {
 
       <View style={styles.Button}>
         <TouchableOpacity onPress={() => alert("Check your mail")}>
-          <Text style={{ textAlign: "center", color: "#fff", fontSize: 24 }}>
+          <Text
+            style={{
+              textAlign: "center",
+              color: "#fff",
+              fontSize: 24,
+              fontFamily: "Comfortaa",
+            }}
+          >
             Reset my Password
           </Text>
         </TouchableOpacity>
@@ -89,18 +104,20 @@ const styles = StyleSheet.create({
   text: {
     color: "#fff",
     textAlign: "center",
-    top: 100,
+    top: 109,
     fontSize: 30,
-    left: -11,
+    left: -5,
+    fontFamily: "Comfortaa",
   },
 
   text2: {
     color: "#fff",
     textAlign: "center",
-    fontSize: 20,
-    top: 130,
+    fontSize: 18,
+    top: 140,
     left: -10,
     lineHeight: 25,
+    fontFamily: "Comfortaa",
   },
 
   Button: {

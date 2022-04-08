@@ -22,6 +22,8 @@ const Splash = ({ navigation }) => {
               textAlign: "center",
               color: "#0F4D92",
               fontSize: 24,
+              fontFamily: "Comfortaa",
+              fontWeight: "700",
             }}
           >
             Get Started
@@ -51,15 +53,15 @@ const styles = StyleSheet.create({
   heading1: {
     color: "#fff",
     fontSize: 60,
-
-    left: -5,
+    fontFamily: "Comfortaa",
+    left: 0,
     top: -40,
   },
 
   heading2: {
     color: "#fff",
     fontSize: 20,
-
+    fontFamily: "Comfortaa",
     justifyContent: "center",
     alignContent: "center",
     top: -30,
@@ -87,5 +89,6 @@ const styles = StyleSheet.create({
     top: 100,
     fontSize: 24,
     justifyContent: "center",
+    fontFamily: "Comfortaa",
   },
 });

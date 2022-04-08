@@ -13,11 +13,6 @@ import CardPay from "../Screens/CardPay";
 import QRNFC from "../Screens/QrNfc";
 import Profile from "../Screens/Profile";
 import Settings from "../Screens/Settings";
-import Splash from "../Screens/Splash";
-import { useRef } from "react/cjs/react.production.min";
-import { Animated } from "react-native-web";
-import { NavigationContainer } from "@react-navigation/native";
-import Login from "../Screens/Login";
 
 const Tab = createBottomTabNavigator();
 
@@ -57,8 +52,8 @@ const Tabs = () => {
                 source={require("../assets/wallet.png")}
                 resizeMode="contain"
                 style={{
-                  width: 35,
-                  height: 35,
+                  width: 40,
+                  height: 40,
                   tintColor: focused ? "#0F4D92" : "#B2B2B2",
                 }}
               />
@@ -66,7 +61,10 @@ const Tabs = () => {
               <Text
                 style={{
                   color: focused ? "#0F4D92" : "#B2B2B2",
+                  marginTop: 10,
                   fontSize: 14,
+                  fontFamily: "Comfortaa",
+                  bottom: 0,
                 }}
               >
                 Wallet
@@ -93,15 +91,15 @@ const Tabs = () => {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 15,
+                top: 20,
               }}
             >
               <Image
                 source={require("../assets/money.png")}
                 resizeMode="contain"
                 style={{
-                  width: 35,
-                  height: 35,
+                  width: 40,
+                  height: 40,
                   tintColor: focused ? "#0F4D92" : "#B2B2B2",
                 }}
               />
@@ -109,7 +107,10 @@ const Tabs = () => {
               <Text
                 style={{
                   color: focused ? "#0F4D92" : "#B2B2B2",
+                  marginTop: 10,
                   fontSize: 14,
+                  fontFamily: "Comfortaa",
+                  bottom: 5,
                 }}
               >
                 Card Pay
@@ -145,7 +146,10 @@ const Tabs = () => {
               <Text
                 style={{
                   color: focused ? "#05A605" : "#B2B2B2",
+                  marginTop: 7,
                   fontSize: 14,
+                  fontFamily: "Comfortaa",
+                  bottom: -2,
                 }}
               >
                 Scan
@@ -172,8 +176,8 @@ const Tabs = () => {
                 source={require("../assets/user.png")}
                 resizeMode="contain"
                 style={{
-                  width: 35,
-                  height: 35,
+                  width: 40,
+                  height: 40,
                   tintColor: focused ? "#0F4D92" : "#B2B2B2",
                 }}
               />
@@ -181,7 +185,10 @@ const Tabs = () => {
               <Text
                 style={{
                   color: focused ? "#0F4D92" : "#B2B2B2",
+                  marginTop: 11,
                   fontSize: 14,
+                  fontFamily: "Comfortaa",
+                  bottom: 0,
                 }}
               >
                 My Profile
@@ -208,8 +215,8 @@ const Tabs = () => {
                 source={require("../assets/settings.png")}
                 resizeMode="contain"
                 style={{
-                  width: 30,
-                  height: 30,
+                  width: 35,
+                  height: 35,
                   tintColor: focused ? "#0F4D92" : "#B2B2B2",
                 }}
               />
@@ -217,7 +224,10 @@ const Tabs = () => {
               <Text
                 style={{
                   color: focused ? "#0F4D92" : "#B2B2B2",
+                  marginTop: 10,
                   fontSize: 14,
+                  fontFamily: "Comfortaa",
+                  bottom: -2,
                 }}
               >
                 Settings

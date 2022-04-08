@@ -40,7 +40,6 @@ const CardPay = () => {
       return;
     }
     const billingDetails = {
-      //4000000000009995 4000 0025 0000 3155
       email: email,
     };
     try {
@@ -89,7 +88,7 @@ const CardPay = () => {
         disabled={loading}
         style={styles.Button}
       >
-        <Text>Pay</Text>
+        <Text style={{ fontFamily: "Comfortaa", fontSize: 24 }}>Pay</Text>
       </TouchableOpacity>
     </View>
   );
@@ -124,10 +123,11 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: "#efefefef",
     borderRadius: 8,
-    fontSize: 20,
+    fontSize: 18,
     height: 50,
     width: 400,
     padding: 10,
+    fontFamily: "Comfortaa",
   },
 
   card: {

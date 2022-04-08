@@ -37,7 +37,7 @@ const Login = ({ navigation }) => {
               style={{
                 width: 29,
                 height: 28,
-                top: 90,
+                top: 80,
                 left: 10,
               }}
             />
@@ -60,10 +60,11 @@ const Login = ({ navigation }) => {
                 paddingLeft: 10,
                 left: 15,
                 bottom: 190,
+                fontFamily: "Comfortaa",
+                fontSize: 14,
               }}
               placeholder="Enter your e-mail"
-              errorStyle={{ color: "red" }}
-              errorMessage="ENTER A VALID ERROR HERE"
+              autoCapitalize="none"
             />
             <View style={styles.pic}>
               <Image
@@ -88,9 +89,12 @@ const Login = ({ navigation }) => {
                 paddingLeft: 10,
                 left: 15,
                 bottom: 180,
+                fontFamily: "Comfortaa",
+                fontSize: 14,
               }}
               placeholder="Enter your Password"
               secureTextEntry={isSecureEntry}
+              autoCapitalize="none"
             />
             <TouchableOpacity
               onPress={() => {
@@ -115,51 +119,58 @@ const Login = ({ navigation }) => {
             >
               <Text
                 style={{
-                  left: 240,
-                  top: -170,
+                  left: 225,
+                  top: -180,
                   color: "#0F4D92",
                   fontSize: 15,
-
-                  fontStyle: "italic",
+                  fontFamily: "Comfortaa",
                 }}
               >
                 Forgot Password ?
               </Text>
             </TouchableOpacity>
-
-            <View style={styles.Button}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("Tabs")}
-                onPressOut={() =>
-                  Haptics.notificationAsync(
-                    Haptics.NotificationFeedbackType.Success
-                  )
-                }
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Tabs")}
+              style={{
+                backgroundColor: "#0F4D92",
+                borderRadius: 15,
+                width: widthPercentageToDP("80%"),
+                height: heightPercentageToDP("8%"),
+                justifyContent: "center",
+                top: heightPercentageToDP("-14%"),
+                left: widthPercentageToDP("5%"),
+              }}
+            >
+              <Text
+                style={{
+                  textAlign: "center",
+                  fontFamily: "Comfortaa",
+                  fontSize: 24,
+                  color: "#FFFFFF",
+                }}
               >
-                <Text
-                  style={{
-                    textAlign: "center",
-                    color: "#fff",
-                    fontSize: 24,
-                    fontWeight: "bold",
-                  }}
-                >
-                  Login
-                </Text>
-              </TouchableOpacity>
-            </View>
+                {" "}
+                Login{" "}
+              </Text>
+            </TouchableOpacity>
           </View>
 
-          <View style={{
-            justifyContent: "center",
-            alignItems: "center",
-            top: 200,
-            
-          }}>
-            <Text style={{
-              fontSize: 18,
-              color: "#0F4D92",
-            }}>- Or Sign in with -</Text>
+          <View
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              top: 180,
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 16,
+                color: "#0F4D92",
+                fontFamily: "Comfortaa",
+              }}
+            >
+              - Or Sign in with -
+            </Text>
           </View>
 
           <View
@@ -168,12 +179,12 @@ const Login = ({ navigation }) => {
               justifyContent: "center",
               alignItems: "center",
               left: -10,
-              top: 15,
+              bottom: 5,
             }}
           >
             <TouchableOpacity>
               <View style={styles.belowbtn}>
-                <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+                <Text style={{ fontFamily: "Comfortaa", fontSize: 16 }}>
                   {" "}
                   Sign in with{" "}
                 </Text>
@@ -186,7 +197,7 @@ const Login = ({ navigation }) => {
             <View style={{ width: 10 }}></View>
             <TouchableOpacity>
               <View style={styles.belowbtn}>
-                <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+                <Text style={{ fontFamily: "Comfortaa", fontSize: 16 }}>
                   {" "}
                   Sign in with{" "}
                 </Text>
@@ -231,18 +242,20 @@ const styles = StyleSheet.create({
 
   login: {
     textAlign: "center",
-    top: 115,
+    top: 100,
     color: "#fff",
     fontSize: 30,
     left: 5,
+    fontFamily: "Comfortaa",
   },
 
   welcome: {
     textAlign: "center",
     color: "#fff",
     fontSize: 15,
-    top: 125,
+    top: 110,
     left: 5,
+    fontFamily: "Comfortaa",
   },
 
   card: {
@@ -251,7 +264,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 15,
     right: -21,
-    top: 160,
+    top: 140,
     shadowOffset: {
       width: 0,
       height: 10,
@@ -263,9 +276,10 @@ const styles = StyleSheet.create({
   text: {
     justifyContent: "center",
     fontSize: 15,
-    lineHeight: 120,
+    lineHeight: 117,
     left: 15,
     fontWeight: "bold",
+    fontFamily: "Comfortaa",
   },
 
   sign: {
