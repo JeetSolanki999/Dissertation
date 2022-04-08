@@ -7,7 +7,7 @@ export default class Helpandfeedback extends React.Component {
     rating: this.props.rating ?? 1,
     animation: new Animated.Value(1),
     numStars: this.props.numStars ?? 5,
-    starColor: this.props.starColor ?? "#D4AF37",
+    starColor: this.props.starColor ?? "#0F4D92",
   };
 
   rate = (star) => {
