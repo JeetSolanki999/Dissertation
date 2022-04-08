@@ -1,40 +1,23 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  Image,
-  Button,
-  ScrollView,
-} from "react-native";
-import React, { useState } from "react";
+import React from "react";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import Rating from "./Rating";
 
 const Helpandfeedback = ({ navigation }) => {
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
         <Image
           source={require("../assets/WhiteArrow_Icon.png")}
           resizeMode="contain"
-          style={styles.arrow}
+          style={{ height: 29, width: 28, top: 80, right: 150 }}
         />
       </TouchableOpacity>
-      <View>
-        <Text style={styles.hf}> Help and Feedback </Text>
 
-        <View style={styles.card}>
-          <Text>Hi there, </Text>
-          <Text>
-            {" "}
-            This is my first phone based application. I would love to hear your
-            feedback!😊 You can contact through mail or send message via the
-            feedback form. Thanks JS.{" "}
-          </Text>
-
-          <Text style={styles.sty}> Hello</Text>
-        </View>
+      <Text style={styles.h1}> Help and Feedback </Text>
+      <View style={styles.star}>
+        <Rating rating={3} />
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
@@ -42,39 +25,24 @@ export default Helpandfeedback;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+
+    alignItems: "center",
     backgroundColor: "#0F4D92",
   },
 
-  arrow: {
-    width: 29,
-    bottom: 150,
-    left: 10,
-  },
-
-  hf: {
-    textAlign: "center",
-    top: -370,
-    color: "#fff",
+  h1: {
     fontSize: 30,
     fontFamily: "Comfortaa",
+    color: "#fff",
+    alignItems: "center",
+    top: 150,
   },
 
-  card: {
-    height: 510,
-    width: 363,
-    backgroundColor: "#fff",
-    borderRadius: 15,
-    right: -33,
-    top: -310,
-    shadowOffset: {
-      width: 0,
-      height: 10,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.5,
-  },
-
-  sty: {
-    color: "#000",
+  star: {
+    alignContent: "center",
+    justifyContent: "center",
+    top: 700,
+    left: 0,
   },
 });
