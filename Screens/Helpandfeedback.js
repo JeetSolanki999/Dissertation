@@ -12,7 +12,7 @@ import Rating from "./Rating";
 const Helpandfeedback = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
+      <TouchableOpacity onPress={() => navigation.navigate("Tabs")}>
         <Image
           source={require("../assets/WhiteArrow_Icon.png")}
           resizeMode="contain"

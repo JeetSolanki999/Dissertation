@@ -2,6 +2,8 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { TextInput } from "react-native-gesture-handler";
 
+
+
 const ForgotPassword = ({ navigation }) => {
   return (
     <View style={styles.bg}>
@@ -75,7 +77,7 @@ const ForgotPassword = ({ navigation }) => {
       </View>
 
       <View style={styles.Button}>
-        <TouchableOpacity onPress={() => alert("Check your mail")}>
+        <TouchableOpacity onPress={ResetForm}>
           <Text
             style={{
               textAlign: "center",
@@ -91,6 +93,7 @@ const ForgotPassword = ({ navigation }) => {
     </View>
   );
 };
+
 
 export default ForgotPassword;
 

@@ -9,6 +9,8 @@ import Signup from "./Screens/Signup";
 import ForgotPassword from "./Screens/ForgotPassword";
 import Helpandfeedback from "./Screens/Helpandfeedback";
 import Settings from "./Screens/Settings";
+import Walletani from "./Screens/walletani";
+import TandC from "./Screens/tandc";
 import { StripeProvider } from "@stripe/stripe-react-native";
 import { useFonts } from "expo-font";
 
@@ -17,7 +19,8 @@ const App = () => {
 
   const [loaded] = useFonts({
     Comfortaa: require("./assets/Fonts/Comfortaa.ttf"),
-    // NEW FONT
+    Zilap: require("./assets/Fonts/Zilap.ttf"),
+    Poppins: require("./assets/Fonts/Poppins.ttf"),
   });
 
   if (!loaded) {
@@ -38,6 +41,8 @@ const App = () => {
           <Stack.Screen name="Tabs" component={Tabs} />
           <Stack.Screen name="Settings" component={Settings} />
           <Stack.Screen name="Helpandfeedback" component={Helpandfeedback} />
+          <Stack.Screen name="TandC" component={TandC} />
+          <Stack.Screen name="walletani" component={Walletani} />
         </Stack.Navigator>
       </NavigationContainer>
     </StripeProvider>

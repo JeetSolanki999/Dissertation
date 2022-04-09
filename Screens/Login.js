@@ -9,7 +9,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
 import { KeyboardAvoidingView } from "react-native";
 import Splash from "./Splash";
@@ -19,9 +19,26 @@ import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from "react-native-responsive-screen";
+import { auth } from "../firebase";
 
 const Login = ({ navigation }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isSecureEntry, setIsSecureEntry] = useState(true);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      console.log(authUser);
+      if (authUser) {
+        navigation.replace("Tabs");
+      }
+    });
+
+    return unsubscribe();
+  }, []);
+
+  const logIn = () => {};
+
   return (
     <ScrollView>
       <TouchableWithoutFeedback

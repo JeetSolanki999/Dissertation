@@ -17,9 +17,27 @@ import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from "react-native-responsive-screen";
+import { auth } from "../firebase";
 
 const Signup = ({ navigation }) => {
   const [isSecureEntry, setIsSecureEntry] = useState(true);
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const register = () => {
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((authUser) => {
+        authUser.user.updateProfile({
+          displayName: fname + " " + lname,
+        });
+      })
+      .catch((error) => alert(error.message));
+  };
+
   return (
     <ScrollView>
       <TouchableWithoutFeedback
@@ -67,8 +85,9 @@ const Signup = ({ navigation }) => {
                   fontSize: 14,
                 }}
                 placeholder="First Name"
-                // errorStyle={{ color: "red" }}
-                // errorMessage="ENTER A VALID ERROR HERE"
+                type="First Name"
+                value={fname}
+                onChangeText={(text) => setFname(text)}
               />
 
               <View>
@@ -98,8 +117,7 @@ const Signup = ({ navigation }) => {
                   fontSize: 14,
                 }}
                 placeholder="Last Name"
-                // errorStyle={{ color: "red" }}
-                // errorMessage="ENTER A VALID ERROR HERE"
+                type="Last Name"
               />
 
               <Image
@@ -132,7 +150,10 @@ const Signup = ({ navigation }) => {
                   fontSize: 14,
                 }}
                 placeholder="Enter your e-mail"
+                type="email"
                 autoCapitalize="none"
+                value={email}
+                onChangeText={(text) => setEmail(text)}
               />
               <Image
                 source={require("../assets/email.png")}
@@ -164,8 +185,11 @@ const Signup = ({ navigation }) => {
                   fontSize: 14,
                 }}
                 placeholder="Enter your password"
+                type="password"
                 secureTextEntry={isSecureEntry}
                 autoCapitalize="none"
+                value={password}
+                onChangeText={(text) => setPassword(text)}
               />
               <TouchableOpacity
                 onPress={() => {
@@ -204,8 +228,12 @@ const Signup = ({ navigation }) => {
                   fontSize: 14,
                 }}
                 placeholder="Confirm your password"
+                type="confirmPassword"
                 secureTextEntry={isSecureEntry}
                 autoCapitalize="none"
+                value={confirmPassword}
+                onChangeText={(text) => setConfirmPassword(text)}
+                onSubmitEditing={register}
               />
               <TouchableOpacity
                 onPress={() => {
@@ -229,7 +257,7 @@ const Signup = ({ navigation }) => {
 
           <View style={styles.Button}>
             <TouchableOpacity
-              onPress={() => navigation.navigate("Tabs")}
+              onPress={register}
               onPressOut={() =>
                 Haptics.notificationAsync(
                   Haptics.NotificationFeedbackType.Success

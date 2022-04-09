@@ -61,7 +61,9 @@ const Settings = ({ navigation }) => {
         <View style={styles.line}></View>
         <Image source={require("../assets/Help.png")} style={styles.image} />
 
-        <Text style={styles.text}> Terms and Conditions</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("TandC")}>
+          <Text style={styles.text}> Terms and Conditions</Text>
+        </TouchableOpacity>
         <View style={styles.line}></View>
         <Image source={require("../assets/tandc.png")} style={styles.image} />
       </View>
