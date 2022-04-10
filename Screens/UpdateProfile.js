@@ -14,10 +14,10 @@ import {
 import { Input } from "react-native-elements";
 import React, { useState, useEffect } from "react";
 import Picker from "./picker";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { getDatabase, ref, onValue, set, update } from "firebase/database";
 import { auth } from "../firebase";
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
@@ -35,6 +35,16 @@ const Profile = () => {
       setLname(data.val().lname);
       setEmail(data.val().email);
     });
+  };
+
+  const updateProfile = () => {
+    const database = getDatabase();
+    set(ref(database, "users/" + auth.currentUser.uid), {
+      email,
+      fname,
+      lname,
+    });
+    alert("Profile Updated");
   };
 
   const [selectedValue, setSelectedValue] = useState("java");
@@ -56,6 +66,18 @@ const Profile = () => {
               top: 20,
             }}
           />
+
+          <TouchableOpacity onPress={() => navigation.navigate("Tabs")}>
+            <Image
+              source={require("../assets/left-arrow.png")}
+              style={{
+                width: 29,
+                height: 28,
+                left: -140,
+                top: -132,
+              }}
+            />
+          </TouchableOpacity>
         </View>
 
         <View>
@@ -83,7 +105,7 @@ const Profile = () => {
               }}
               value={fname}
               onChangeText={setFname}
-            />
+            ></TextInput>
             <View
               style={{
                 height: 15,
@@ -102,7 +124,7 @@ const Profile = () => {
               }}
               value={lname}
               onChangeText={setLname}
-            />
+            ></TextInput>
             <View
               style={{
                 height: 15,
@@ -121,8 +143,41 @@ const Profile = () => {
               }}
               value={email}
               onChangeText={setEmail}
-            />
+            ></TextInput>
+            <View
+              style={{
+                height: 15,
+              }}
+            ></View>
+            <TextInput
+              placeholder="Password"
+              style={{
+                borderRadius: 5,
+                paddingLeft: 10,
+                fontFamily: "Comfortaa",
+                fontSize: 16,
+                height: 40,
+                backgroundColor: "#fff",
+                color: "#0F4D92",
+              }}
+            ></TextInput>
+            <Picker />
           </View>
+        </View>
+
+        <View style={styles.Button}>
+          <TouchableOpacity onPress={() => updateProfile()}>
+            <Text
+              style={{
+                textAlign: "center",
+                color: "#0F4D92",
+                fontSize: 24,
+                fontFamily: "Comfortaa",
+              }}
+            >
+              Update Profile
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </TouchableWithoutFeedback>

@@ -1,130 +1,69 @@
-import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  Animated,
-  SafeAreaView,
-  Dimensions,
-} from "react-native";
+// import { Text, StyleSheet, View, ScrollView, Animated } from "react-native";
+// import React, { Component } from "react";
+// import {
+//   heightPercentageToDP,
+//   widthPercentageToDP,
+// } from "react-native-responsive-screen";
 
-const cardHeight = 250;
-const cardTitle = 45;
-const cardPadding = 10;
+// const cards = [
+//   {
+//     name: "Shot",
+//     color: "#a9d0b6",
+//     price: "30 CHF",
+//   },
+//   {
+//     name: "Juice",
+//     color: "#e9bbd1",
+//     price: "64 CHF",
+//   },
+//   {
+//     name: "Mighty Juice",
+//     color: "#eba65c",
+//     price: "80 CHF",
+//   },
+//   {
+//     name: "Sandwich",
+//     color: "#95c3e4",
+//     price: "85 CHF",
+//   },
+//   {
+//     name: "Combi",
+//     color: "#1c1c1c",
+//     price: "145 CHF",
+//   },
+//   {
+//     name: "Signature",
+//     color: "#a390bc",
+//     price: "92 CHF",
+//   },
+//   {
+//     name: "Coffee",
+//     color: "#fef2a0",
+//     price: "47 CHF",
+//   },
+// ];
 
-const { height } = Dimensions.get("window");
-const cards = [
-  {
-    name: "Shot",
-    color: "#a9d0b6",
-    price: "30 CHF",
-  },
-  {
-    name: "Juice",
-    color: "#e9bbd1",
-    price: "64 CHF",
-  },
-  {
-    name: "Mighty Juice",
-    color: "#eba65c",
-    price: "80 CHF",
-  },
-  {
-    name: "Sandwich",
-    color: "#95c3e4",
-    price: "85 CHF",
-  },
-  {
-    name: "Combi",
-    color: "#1c1c1c",
-    price: "145 CHF",
-  },
-  {
-    name: "Signature",
-    color: "#a390bc",
-    price: "92 CHF",
-  },
-  {
-    name: "Coffee",
-    color: "#Of4d92",
-    price: "47 CHF",
-  },
-];
+// export default class walletani extends React.Component {
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         <View>
+//           {
+//             cards.map(card => <Card key={card.name} {...card} />)
+//           }
 
-export default class App extends React.Component {
-  state = {
-    y: new Animated.Value(0),
-  };
+//         </View>
+//         <ScrollView />
+//       </View>
+//     );
+//   }
+// }
 
-  render() {
-    const { y } = this.state;
-    return (
-      <SafeAreaView style={styles.root}>
-        <View style={styles.container}>
-          <View style={StyleSheet.absoluteFill}>
-            {cards.map((card, i) => {
-              const inputRange = [-cardHeight, 0];
-              const outputRange = [
-                cardHeight * i,
-                (cardHeight - cardTitle) * -i,
-              ];
-              if (i > 0) {
-                inputRange.push(cardPadding * i);
-                outputRange.push((cardHeight - cardPadding) * -i);
-              }
-              const translateY = y.interpolate({
-                inputRange,
-                outputRange,
-                extrapolateRight: "clamp",
-              });
-              return (
-                <Animated.View
-                  key={card.name}
-                  style={{ transform: [{ translateY }] }}
-                >
-                  <View
-                    style={[styles.card, { backgroundColor: card.color }]}
-                  />
-                </Animated.View>
-              );
-            })}
-          </View>
-          <Animated.ScrollView
-            scrollEventThrottle={16}
-            contentContainerStyle={styles.content}
-            showsVerticalScrollIndicator={false}
-            onScroll={Animated.event(
-              [
-                {
-                  nativeEvent: {
-                    contentOffset: { y },
-                  },
-                },
-              ],
-              { useNativeDriver: true }
-            )}
-          />
-        </View>
-      </SafeAreaView>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    margin: 16,
-
-  },
-  container: {
-    flex: 1,
-  },
-  content: {
-    height: height * 2,
-  },
-  card: {
-    height: cardHeight,
-    borderRadius: 10,
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     backgroundColor: "#fff",
+//     alignItems: "center",
+//     justifyContent: "center",
+//     height: heightPercentageToDP("100%"),
+//   },
+// });

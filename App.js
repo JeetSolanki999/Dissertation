@@ -8,9 +8,11 @@ import Login from "./Screens/Login";
 import Signup from "./Screens/Signup";
 import ForgotPassword from "./Screens/ForgotPassword";
 import Helpandfeedback from "./Screens/Helpandfeedback";
+import UpdateProfile from "./Screens/UpdateProfile";
 import Settings from "./Screens/Settings";
 import Walletani from "./Screens/walletani";
 import TandC from "./Screens/tandc";
+
 import { StripeProvider } from "@stripe/stripe-react-native";
 import { useFonts } from "expo-font";
 
@@ -42,7 +44,8 @@ const App = () => {
           <Stack.Screen name="Settings" component={Settings} />
           <Stack.Screen name="Helpandfeedback" component={Helpandfeedback} />
           <Stack.Screen name="TandC" component={TandC} />
-          <Stack.Screen name="walletani" component={Walletani} />
+          <Stack.Screen name="UpdateProfile" component={UpdateProfile} />
+          {/* <Stack.Screen name="walletani" component={Walletani} /> */}
         </Stack.Navigator>
       </NavigationContainer>
     </StripeProvider>

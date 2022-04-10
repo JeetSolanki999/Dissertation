@@ -20,6 +20,7 @@ import {
   widthPercentageToDP,
 } from "react-native-responsive-screen";
 import { auth } from "../firebase";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
@@ -27,17 +28,46 @@ const Login = ({ navigation }) => {
   const [isSecureEntry, setIsSecureEntry] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((authUser) => {
-      console.log(authUser);
-      if (authUser) {
-        navigation.replace("Tabs");
-      }
-    });
-
-    return unsubscribe();
+    // const unsubscribe = auth.onAuthStateChanged((authUser) => {
+    //   console.log(authUser);
+    //   if (authUser) {
+    //     navigation.replace("Tabs");
+    //   }
+    // });
+    // return unsubscribe();
   }, []);
 
-  const logIn = () => {};
+  const login = () => {
+    if (email && password) {
+      auth
+        .signInWithEmailAndPassword(email, password)
+        .then((authUser) => {
+          console.log(authUser);
+          navigation.replace("Tabs");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      alert("Please enter email and password");
+    }
+  };
+
+  const googleLogin = () => {
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result);
+        const credentials = GoogleAuthProvider.credentialFromResult(result);
+        const token = credentials.accessToken;
+        const user = result.user;
+        // navigation.replace("Tabs");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
 
   return (
     <ScrollView>
@@ -82,6 +112,8 @@ const Login = ({ navigation }) => {
               }}
               placeholder="Enter your e-mail"
               autoCapitalize="none"
+              onChangeText={(text) => setEmail(text)}
+              value={email}
             />
             <View style={styles.pic}>
               <Image
@@ -112,6 +144,8 @@ const Login = ({ navigation }) => {
               placeholder="Enter your Password"
               secureTextEntry={isSecureEntry}
               autoCapitalize="none"
+              onChangeText={(text) => setPassword(text)}
+              value={password}
             />
             <TouchableOpacity
               onPress={() => {
@@ -147,7 +181,7 @@ const Login = ({ navigation }) => {
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => navigation.navigate("Tabs")}
+              onPress={() => login()}
               style={{
                 backgroundColor: "#0F4D92",
                 borderRadius: 15,
@@ -166,63 +200,8 @@ const Login = ({ navigation }) => {
                   color: "#FFFFFF",
                 }}
               >
-                {" "}
-                Login{" "}
+                Login
               </Text>
-            </TouchableOpacity>
-          </View>
-
-          <View
-            style={{
-              justifyContent: "center",
-              alignItems: "center",
-              top: 180,
-            }}
-          >
-            <Text
-              style={{
-                fontSize: 16,
-                color: "#0F4D92",
-                fontFamily: "Comfortaa",
-              }}
-            >
-              - Or Sign in with -
-            </Text>
-          </View>
-
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-              left: -10,
-              bottom: 5,
-            }}
-          >
-            <TouchableOpacity>
-              <View style={styles.belowbtn}>
-                <Text style={{ fontFamily: "Comfortaa", fontSize: 16 }}>
-                  {" "}
-                  Sign in with{" "}
-                </Text>
-                <Image
-                  style={{ height: 25, width: 25, marginLeft: 10 }}
-                  source={require("../assets/Google_Icon.png")}
-                />
-              </View>
-            </TouchableOpacity>
-            <View style={{ width: 10 }}></View>
-            <TouchableOpacity>
-              <View style={styles.belowbtn}>
-                <Text style={{ fontFamily: "Comfortaa", fontSize: 16 }}>
-                  {" "}
-                  Sign in with{" "}
-                </Text>
-                <Image
-                  style={{ height: 25, width: 25, marginLeft: 5 }}
-                  source={require("../assets/facebook.png")}
-                />
-              </View>
             </TouchableOpacity>
           </View>
         </View>

@@ -1,10 +1,17 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
-
-
+import { auth } from "../firebase";
 
 const ForgotPassword = ({ navigation }) => {
+  const [email, setemail] = useState("");
+
+  const forgotPassword = () => {
+    auth.sendPasswordResetEmail(email).then(() => {
+      alert("Mail Sent, Please Check Your Mailbox");
+    });
+  };
+
   return (
     <View style={styles.bg}>
       <TouchableOpacity onPress={() => navigation.navigate("Login")}>
@@ -62,6 +69,8 @@ const ForgotPassword = ({ navigation }) => {
         }}
         autoCapitalize="none"
         placeholder="Enter your e-mail"
+        onChangeText={setemail}
+        value={email}
       />
       <View style={styles.pic}>
         <Image
@@ -77,7 +86,7 @@ const ForgotPassword = ({ navigation }) => {
       </View>
 
       <View style={styles.Button}>
-        <TouchableOpacity onPress={ResetForm}>
+        <TouchableOpacity onPress={() => forgotPassword()}>
           <Text
             style={{
               textAlign: "center",
@@ -93,7 +102,6 @@ const ForgotPassword = ({ navigation }) => {
     </View>
   );
 };
-
 
 export default ForgotPassword;
 

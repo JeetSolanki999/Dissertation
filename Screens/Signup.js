@@ -18,6 +18,7 @@ import {
   widthPercentageToDP,
 } from "react-native-responsive-screen";
 import { auth } from "../firebase";
+import { getDatabase, ref, set } from "firebase/database";
 
 const Signup = ({ navigation }) => {
   const [isSecureEntry, setIsSecureEntry] = useState(true);
@@ -28,12 +29,18 @@ const Signup = ({ navigation }) => {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const register = () => {
+    const db = getDatabase();
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((authUser) => {
-        authUser.user.updateProfile({
-          displayName: fname + " " + lname,
+        set(ref(db, "users/" + authUser.user.uid), {
+          email,
+          fname,
+          lname,
         });
+        setFname("");
+        setEmail("");
+        navigation.navigate("Tabs");
       })
       .catch((error) => alert(error.message));
   };
@@ -118,6 +125,7 @@ const Signup = ({ navigation }) => {
                 }}
                 placeholder="Last Name"
                 type="Last Name"
+                onChangeText={(text) => setLname(text)}
               />
 
               <Image

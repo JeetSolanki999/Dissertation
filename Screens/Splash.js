@@ -4,8 +4,17 @@ import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from "react-native-responsive-screen";
+import { auth } from "../firebase";
 
 const Splash = ({ navigation }) => {
+  const loginChecker = () => {
+    let user = auth.currentUser;
+    if (user) {
+      navigation.replace("Tabs");
+    } else {
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.heading1}>DiGi-Pocket</Text>

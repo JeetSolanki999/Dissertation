@@ -6,7 +6,7 @@ import Walletani from "./walletani";
 const Wallet = () => {
   return (
     <View style={styles.container}>
-      <Walletani />
+      {/* <Walletani /> */}
     </View>
   );
 };

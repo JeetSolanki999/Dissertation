@@ -19,7 +19,16 @@ if (firebase.apps.length === 0) {
   app = firebase.app();
 }
 
+// const logout = document.querySelector("#logout");
+// logout.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   auth.signOut().then(() => {
+//     console.log("logged out");
+//   });
+// });
+
 const db = app.firestore();
 const auth = firebase.auth();
+const database = firebase.database();
 
-export { db, auth };
+export { db, auth, database, firebase };

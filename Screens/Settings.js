@@ -8,9 +8,22 @@ import {
   Switch,
 } from "react-native";
 import React, { useState } from "react";
+import { auth } from "../firebase";
 
 const Settings = ({ navigation }) => {
   const [isEnabled, setIsEnabled] = useState(false);
+
+  const logOut = () => {
+    auth
+      .signOut()
+      .then(() => {
+        navigation.replace("Splash");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
   return (
     <View style={styles.container}>
       <View>
@@ -18,7 +31,9 @@ const Settings = ({ navigation }) => {
       </View>
 
       <View>
-        <Text style={styles.text}> Account Settings</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("UpdateProfile")}>
+          <Text style={styles.text}> Account Settings</Text>
+        </TouchableOpacity>
         <View style={styles.line}></View>
         <Image
           source={require("../assets/settingsuser.png")}
@@ -69,7 +84,7 @@ const Settings = ({ navigation }) => {
       </View>
 
       <View style={styles.Button}>
-        <TouchableOpacity onPress={() => navigation.navigate("Splash")}>
+        <TouchableOpacity onPress={() => logOut()}>
           <Text
             style={{
               textAlign: "center",
