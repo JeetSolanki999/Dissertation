@@ -36,7 +36,7 @@ export default function qrscanner() {
           onPress={() => setScanned(false)}
           style={styles.button}
         >
-          <Text> JJ </Text>
+          <Text style={styles.text}> Scan again </Text>
         </TouchableOpacity>
       )}
     </View>
@@ -45,16 +45,26 @@ export default function qrscanner() {
 
 const styles = StyleSheet.create({
   container: {
-    height: "50%",
-    width: "50%",
+    height: "60%",
+    width: "60%",
+    right: "5%",
+  },
+
+  text: {
+    fontSize: 20,
+    textAlign: "center",
+    fontFamily: "Poppins",
   },
 
   button: {
-    bottom: 50,
-    left: 0,
-    right: 0,
-    backgroundColor: "#fff",
+    left: 60,
+    borderRadius: 10,
+    bottom: -430,
+    width: "60%",
+    height: "15%",
+    backgroundColor: "#903",
     padding: 10,
-    fontFamily: "Comfortaa",
+
+    justifyContent: "center",
   },
 });

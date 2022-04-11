@@ -182,6 +182,11 @@ const Login = ({ navigation }) => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => login()}
+              onPressOut={() =>
+                Haptics.notificationAsync(
+                  Haptics.NotificationFeedbackType.Success
+                )
+              }
               style={{
                 backgroundColor: "#0F4D92",
                 borderRadius: 15,
@@ -195,13 +200,67 @@ const Login = ({ navigation }) => {
               <Text
                 style={{
                   textAlign: "center",
-                  fontFamily: "Comfortaa",
+                  fontFamily: "Poppins",
                   fontSize: 24,
                   color: "#FFFFFF",
                 }}
               >
                 Login
               </Text>
+            </TouchableOpacity>
+          </View>
+
+          <View
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              top: 170,
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 16,
+                color: "#0F4D92",
+                fontFamily: "Comfortaa",
+              }}
+            >
+              - Or Sign in with -
+            </Text>
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              left: 0,
+              top: -10,
+            }}
+          >
+            <TouchableOpacity>
+              <View style={styles.belowbtn}>
+                <Text style={{ fontFamily: "Comfortaa", fontSize: 16 }}>
+                  {" "}
+                  Sign in with{" "}
+                </Text>
+                <Image
+                  style={{ height: 25, width: 25, marginLeft: 10 }}
+                  source={require("../assets/Google_Icon.png")}
+                />
+              </View>
+            </TouchableOpacity>
+            <View style={{ width: 10 }}></View>
+            <TouchableOpacity>
+              <View style={styles.belowbtn}>
+                <Text style={{ fontFamily: "Comfortaa", fontSize: 16 }}>
+                  {" "}
+                  Sign in with{" "}
+                </Text>
+                <Image
+                  style={{ height: 25, width: 25, marginLeft: 5 }}
+                  source={require("../assets/facebook.png")}
+                />
+              </View>
             </TouchableOpacity>
           </View>
         </View>

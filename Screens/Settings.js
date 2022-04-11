@@ -90,7 +90,7 @@ const Settings = ({ navigation }) => {
               textAlign: "center",
               color: "#0F4D92",
               fontSize: 24,
-              fontFamily: "Comfortaa",
+              fontFamily: "Poppins",
             }}
           >
             Log Out

@@ -21,24 +21,22 @@ const Splash = ({ navigation }) => {
       <Text style={styles.heading2}>Easy. Fast. Portable. </Text>
       <Text> </Text>
 
-      <View style={styles.Button}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Signup")}
-          style={{ backgroundColor: "#FFFFFF", width: "50", height: "20" }}
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Signup")}
+        style={styles.Button}
+      >
+        <Text
+          style={{
+            textAlign: "center",
+            color: "#0F4D92",
+            fontSize: 24,
+            fontFamily: "Comfortaa",
+          }}
         >
-          <Text
-            style={{
-              textAlign: "center",
-              color: "#0F4D92",
-              fontSize: 24,
-              fontFamily: "Comfortaa",
-              fontWeight: "700",
-            }}
-          >
-            Get Started
-          </Text>
-        </TouchableOpacity>
-      </View>
+          Get Started
+        </Text>
+      </TouchableOpacity>
+
       <Text></Text>
 
       <TouchableOpacity onPress={() => navigation.navigate("Login")}>
@@ -89,7 +87,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.5,
-    top: 50,
+    top: 60,
   },
 
   link: {

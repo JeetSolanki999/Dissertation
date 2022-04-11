@@ -59,69 +59,78 @@ const Profile = () => {
         </View>
 
         <View>
-          <Text style={styles.name}>{fname + " " + lname}</Text>
+          <Text style={styles.name}> Hello, {fname + " " + lname}</Text>
         </View>
-        <View style={styles.card}>
+
+        <View
+          style={{
+            width: 230,
+            height: 30,
+            top: -400,
+            left: 60,
+          }}
+        >
+          <TextInput
+            placeholder="First Name"
+            style={{
+              borderRadius: 5,
+              paddingLeft: 10,
+              fontFamily: "Comfortaa",
+              height: 40,
+              fontSize: 16,
+              height: 40,
+              backgroundColor: "#fff",
+              color: "#000",
+            }}
+            value={fname}
+            onChangeText={setFname}
+          />
           <View
             style={{
-              width: 400,
-              height: 30,
-              top: -400,
+              height: 15,
+            }}
+          ></View>
+          <TextInput
+            placeholder="Last Name"
+            style={{
+              borderRadius: 5,
+              paddingLeft: 10,
+              fontFamily: "Comfortaa",
+              fontSize: 16,
+              height: 40,
+              backgroundColor: "#fff",
+              color: "#000",
+            }}
+            value={lname}
+            onChangeText={setLname}
+          />
+          <View
+            style={{
+              height: 15,
+            }}
+          ></View>
+          <TextInput
+            placeholder="Email"
+            style={{
+              borderRadius: 5,
+              paddingLeft: 10,
+              fontFamily: "Comfortaa",
+              fontSize: 16,
+              height: 40,
+              backgroundColor: "#fff",
+              color: "#000",
+            }}
+            value={email}
+            onChangeText={setEmail}
+          />
+          <View
+            style={{
+              flexDirection: "column",
             }}
           >
-            <TextInput
-              placeholder="First Name"
-              style={{
-                borderRadius: 5,
-                paddingLeft: 10,
-                fontFamily: "Comfortaa",
-                height: 40,
-                fontSize: 16,
-                height: 40,
-                backgroundColor: "#fff",
-                color: "#0F4D92",
-              }}
-              value={fname}
-              onChangeText={setFname}
-            />
-            <View
-              style={{
-                height: 15,
-              }}
-            ></View>
-            <TextInput
-              placeholder="Last Name"
-              style={{
-                borderRadius: 5,
-                paddingLeft: 10,
-                fontFamily: "Comfortaa",
-                fontSize: 16,
-                height: 40,
-                backgroundColor: "#fff",
-                color: "#0F4D92",
-              }}
-              value={lname}
-              onChangeText={setLname}
-            />
-            <View
-              style={{
-                height: 15,
-              }}
-            ></View>
-            <TextInput
-              placeholder="Email"
-              style={{
-                borderRadius: 5,
-                paddingLeft: 10,
-                fontFamily: "Comfortaa",
-                fontSize: 16,
-                height: 40,
-                backgroundColor: "#fff",
-                color: "#0F4D92",
-              }}
-              value={email}
-              onChangeText={setEmail}
-            />
+            <Text style={styles.sidetxt}>First Name:</Text>
+            <Text style={styles.sidetxt}>Second Name:</Text>
+            <Text style={styles.sidetxt}>Email:</Text>
           </View>
         </View>
       </View>
@@ -195,5 +204,14 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.5,
     top: -10,
+  },
+
+  sidetxt: {
+    paddingBottom: 30,
+    fontFamily: "Poppins",
+    fontSize: 16,
+    color: "#fff",
+    left: -140,
+    top: -145,
   },
 });

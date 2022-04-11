@@ -16,6 +16,7 @@ import React, { useState, useEffect } from "react";
 import Picker from "./picker";
 import { getDatabase, ref, onValue, set, update } from "firebase/database";
 import { auth } from "../firebase";
+import UploadImage from "./Uploadimg";
 
 const Profile = ({ navigation }) => {
   const [fname, setFname] = useState("");
@@ -86,9 +87,10 @@ const Profile = ({ navigation }) => {
         <View style={styles.card}>
           <View
             style={{
-              width: 400,
+              width: 230,
               height: 30,
               top: -400,
+              left: 60,
             }}
           >
             <TextInput
@@ -101,7 +103,7 @@ const Profile = ({ navigation }) => {
                 fontSize: 16,
                 height: 40,
                 backgroundColor: "#fff",
-                color: "#0F4D92",
+                color: "#000",
               }}
               value={fname}
               onChangeText={setFname}
@@ -120,7 +122,7 @@ const Profile = ({ navigation }) => {
                 fontSize: 16,
                 height: 40,
                 backgroundColor: "#fff",
-                color: "#0F4D92",
+                color: "#000",
               }}
               value={lname}
               onChangeText={setLname}
@@ -139,29 +141,22 @@ const Profile = ({ navigation }) => {
                 fontSize: 16,
                 height: 40,
                 backgroundColor: "#fff",
-                color: "#0F4D92",
+                color: "#000",
               }}
               value={email}
               onChangeText={setEmail}
             ></TextInput>
             <View
               style={{
-                height: 15,
+                flexDirection: "column",
               }}
-            ></View>
-            <TextInput
-              placeholder="Password"
-              style={{
-                borderRadius: 5,
-                paddingLeft: 10,
-                fontFamily: "Comfortaa",
-                fontSize: 16,
-                height: 40,
-                backgroundColor: "#fff",
-                color: "#0F4D92",
-              }}
-            ></TextInput>
-            <Picker />
+            >
+              <Text style={styles.sidetxt}>First Name:</Text>
+              <Text style={styles.sidetxt}>Second Name:</Text>
+              <Text style={styles.sidetxt}>Email:</Text>
+            </View>
+
+            {/* <Picker /> */}
           </View>
         </View>
 
@@ -172,7 +167,7 @@ const Profile = ({ navigation }) => {
                 textAlign: "center",
                 color: "#0F4D92",
                 fontSize: 24,
-                fontFamily: "Comfortaa",
+                fontFamily: "Poppins",
               }}
             >
               Update Profile
@@ -249,6 +244,15 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.5,
-    top: -10,
+    top: -200,
+  },
+
+  sidetxt: {
+    paddingBottom: 30,
+    fontFamily: "Poppins",
+    fontSize: 16,
+    color: "#fff",
+    left: -140,
+    top: -145,
   },
 });

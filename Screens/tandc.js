@@ -12,7 +12,7 @@ import {
   widthPercentageToDP,
 } from "react-native-responsive-screen";
 
-const tandc = ({ navigation }) => {
+const TandC = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate("Tabs")}>
@@ -132,7 +132,7 @@ const tandc = ({ navigation }) => {
   );
 };
 
-export default tandc;
+export default TandC;
 
 const styles = StyleSheet.create({
   container: {

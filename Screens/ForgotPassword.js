@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+} from "react-native";
 import React, { useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
 import { auth } from "../firebase";
@@ -13,93 +20,95 @@ const ForgotPassword = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.bg}>
-      <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-        <Image
-          source={require("../assets/WhiteArrow_Icon.png")}
-          resizeMode="contain"
-          style={{
-            width: 29,
-            height: 28,
-            top: 80,
-            left: 10,
-          }}
-        />
-      </TouchableOpacity>
-
-      <Image
-        source={require("../assets/forgot-password.png")}
-        resizeMode="contain"
-        style={{
-          width: 209,
-          height: 158,
-          top: 90,
-          left: 120,
-        }}
-      />
-
-      <Text style={styles.text}> Forgot Password ?</Text>
-
-      <Text style={styles.text2}> Don't worry! It happens 😅</Text>
-      <Text style={styles.text2}> Please enter the e-mail address </Text>
-      <Text style={styles.text2}> associated with your account</Text>
-
-      <Text
-        style={{ left: 48, top: 235, fontSize: 17, fontFamily: "Comfortaa" }}
-      >
-        {" "}
-        Email{" "}
-      </Text>
-
-      <TextInput
-        style={{
-          marginTop: 40,
-          width: 332,
-          height: 43,
-          borderRadius: 5,
-          backgroundColor: "#EAEAED",
-          paddingLeft: 10,
-          left: 50,
-          top: 210,
-          shadowOffset: { width: 0, height: 6 },
-          shadowColor: "black",
-          shadowOpacity: 0.2,
-          fontFamily: "Comfortaa",
-          fontSize: 14,
-        }}
-        autoCapitalize="none"
-        placeholder="Enter your e-mail"
-        onChangeText={setemail}
-        value={email}
-      />
-      <View style={styles.pic}>
-        <Image
-          source={require("../assets/email.png")}
-          resizeMode="contain"
-          style={{
-            width: 29,
-            height: 28,
-            top: 177,
-            left: 345,
-          }}
-        />
-      </View>
-
-      <View style={styles.Button}>
-        <TouchableOpacity onPress={() => forgotPassword()}>
-          <Text
+    <ScrollView>
+      <View style={styles.bg}>
+        <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+          <Image
+            source={require("../assets/WhiteArrow_Icon.png")}
+            resizeMode="contain"
             style={{
-              textAlign: "center",
-              color: "#fff",
-              fontSize: 24,
-              fontFamily: "Comfortaa",
+              width: 29,
+              height: 28,
+              top: 80,
+              left: 10,
             }}
-          >
-            Reset my Password
-          </Text>
+          />
         </TouchableOpacity>
+
+        <Image
+          source={require("../assets/forgot-password.png")}
+          resizeMode="contain"
+          style={{
+            width: 209,
+            height: 158,
+            top: 90,
+            left: 120,
+          }}
+        />
+
+        <Text style={styles.text}> Forgot Password ?</Text>
+
+        <Text style={styles.text2}> Don't worry! It happens 😅</Text>
+        <Text style={styles.text2}> Please enter the e-mail address </Text>
+        <Text style={styles.text2}> associated with your account</Text>
+
+        <Text
+          style={{ left: 48, top: 235, fontSize: 17, fontFamily: "Comfortaa" }}
+        >
+          {" "}
+          Email{" "}
+        </Text>
+
+        <TextInput
+          style={{
+            marginTop: 40,
+            width: 332,
+            height: 43,
+            borderRadius: 5,
+            backgroundColor: "#EAEAED",
+            paddingLeft: 10,
+            left: 50,
+            top: 210,
+            shadowOffset: { width: 0, height: 6 },
+            shadowColor: "black",
+            shadowOpacity: 0.2,
+            fontFamily: "Comfortaa",
+            fontSize: 14,
+          }}
+          autoCapitalize="none"
+          placeholder="Enter your e-mail"
+          onChangeText={setemail}
+          value={email}
+        />
+        <View style={styles.pic}>
+          <Image
+            source={require("../assets/email.png")}
+            resizeMode="contain"
+            style={{
+              width: 29,
+              height: 28,
+              top: 177,
+              left: 345,
+            }}
+          />
+        </View>
+
+        <View style={styles.Button}>
+          <TouchableOpacity onPress={() => forgotPassword()}>
+            <Text
+              style={{
+                textAlign: "center",
+                color: "#fff",
+                fontSize: 22,
+                fontFamily: "Poppins",
+              }}
+            >
+              Reset my Password
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

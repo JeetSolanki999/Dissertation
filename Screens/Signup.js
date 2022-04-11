@@ -11,7 +11,7 @@ import {
 import * as Haptics from "expo-haptics";
 import React, { useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
-import { Input } from "react-native-elements";
+import { Input, CheckBox } from "react-native-elements";
 import PasswordInputText from "react-native-hide-show-password-input";
 import {
   heightPercentageToDP,
@@ -27,7 +27,15 @@ const Signup = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
 
+  const clickHandler = () => {
+    if (isChecked === true) {
+      navigation.navigate("Tabs");
+    } else {
+      alert("Please accept the terms and conditions");
+    }
+  };
   const register = () => {
     const db = getDatabase();
     auth
@@ -265,7 +273,7 @@ const Signup = ({ navigation }) => {
 
           <View style={styles.Button}>
             <TouchableOpacity
-              onPress={register}
+              onPress={register} //!!change to clickHandler
               onPressOut={() =>
                 Haptics.notificationAsync(
                   Haptics.NotificationFeedbackType.Success
@@ -277,67 +285,21 @@ const Signup = ({ navigation }) => {
                   textAlign: "center",
                   color: "#fff",
                   fontSize: 24,
-                  bottom: -35,
-                  fontFamily: "Comfortaa",
+
+                  fontFamily: "Poppins",
                 }}
               >
                 Sign Up
               </Text>
             </TouchableOpacity>
-
-            <View
-              style={{
-                justifyContent: "center",
-                alignItems: "center",
-                top: 120,
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 16,
-                  color: "#0F4D92",
-                  fontFamily: "Comfortaa",
-                }}
-              >
-                - Or Sign up with -
-              </Text>
-            </View>
-
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                left: 0,
-                top: -80,
-              }}
-            >
-              <TouchableOpacity>
-                <View style={styles.belowbtn}>
-                  <Text style={{ fontFamily: "Comfortaa", fontSize: 16 }}>
-                    {" "}
-                    Sign in with{" "}
-                  </Text>
-                  <Image
-                    style={{ height: 25, width: 25, marginLeft: 10 }}
-                    source={require("../assets/Google_Icon.png")}
-                  />
-                </View>
-              </TouchableOpacity>
-              <View style={{ width: 10 }}></View>
-              <TouchableOpacity>
-                <View style={styles.belowbtn}>
-                  <Text style={{ fontFamily: "Comfortaa", fontSize: 16 }}>
-                    {" "}
-                    Sign in with{" "}
-                  </Text>
-                  <Image
-                    style={{ height: 25, width: 25, marginLeft: 5 }}
-                    source={require("../assets/facebook.png")}
-                  />
-                </View>
-              </TouchableOpacity>
-            </View>
+          </View>
+          <View style={{ bottom: -80 }}>
+            <CheckBox
+              title={"I agree to the Terms of Service and Privacy Policy"}
+              checked={isChecked}
+              checkedColor="#0F4D92"
+              onPress={() => setIsChecked(!isChecked)}
+            />
           </View>
         </View>
       </TouchableWithoutFeedback>
