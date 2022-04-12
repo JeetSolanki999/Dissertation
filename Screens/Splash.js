@@ -77,12 +77,10 @@ const styles = StyleSheet.create({
   Button: {
     backgroundColor: "#fff",
     borderRadius: 15,
-    width: 313,
-    height: 70,
+    width: widthPercentageToDP("70%"),
+    padding: 20,
     justifyContent: "center",
-    fontSize: 200,
     shadowOffset: {
-      width: 0,
       height: 10,
     },
     shadowOpacity: 0.25,
@@ -97,5 +95,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     justifyContent: "center",
     fontFamily: "Comfortaa",
+    borderWidth: 1,
+    padding: 20,
+    borderRadius: 15,
+    borderColor: "#fff",
   },
 });

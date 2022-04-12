@@ -19,7 +19,7 @@ const TandC = ({ navigation }) => {
         <Image
           source={require("../assets/WhiteArrow_Icon.png")}
           resizeMode="contain"
-          style={{ height: 29, width: 28, right: -10, top: 90 }}
+          style={{ height: 29, width: 28, right: -10, top: 75 }}
         />
       </TouchableOpacity>
 

@@ -71,147 +71,151 @@ const CardPay = () => {
     }
   };
   return (
-    <TouchableWithoutFeedback
-      onPress={() => {
-        Keyboard.dismiss();
-      }}
-    >
-      <View style={styles.container}>
-        <Text
-          style={{
-            textAlign: "center",
-            fontSize: 30,
-            top: -90,
-            fontFamily: "Comfortaa",
-            lineHeight: 50,
-            color: "#F2F2F2",
-          }}
-        >
-          {" "}
-          Pay your Friend 🤝
-        </Text>
-
-        <Text
-          style={{
-            fontSize: 20,
-            top: -90,
-            fontFamily: "Comfortaa",
-            lineHeight: 50,
-            color: "#F2F2F2",
-            left: -6,
-          }}
-        >
-          {" "}
-          Easy. Smooth. Quick.
-        </Text>
-        <View
-          style={{
-            top: -10,
-          }}
-        >
-          <TextInput
-            autoCapitalize="none"
-            placeholder="Enter your e-mail"
-            keyboardType="email-address"
-            onChange={(value) => setEmail(value.nativeEvent.text)}
-            style={styles.input}
-          />
-
-          <Image
-            source={require("../assets/email.png")}
-            resizeMode="contain"
-            style={{
-              width: 35,
-              height: 35,
-              top: -40,
-              left: 5,
-            }}
-          />
-        </View>
-
-        <View
-          style={{
-            top: -40,
-          }}
-        >
-          <CardField
-            placeholder={{ number: "4242 4242 4242 4242" }}
-            cardStyle={styles.card}
-            style={styles.cardContainer}
-            onCardChange={(cardDetails) => {
-              setCardDetails(cardDetails);
-            }}
-          />
-        </View>
-        <View
-          style={{
-            top: -35,
-          }}
-        >
-          <TextInput
-            autoCapitalize="none"
-            placeholder="Account Number"
-            keyboardType="number-pad"
-            style={styles.input}
-          />
-
-          <Image
-            source={require("../assets/crediti.png")}
-            resizeMode="contain"
-            style={{
-              width: 30,
-              height: 30,
-              top: -40,
-              left: 5,
-            }}
-          />
-        </View>
-
-        <View
-          style={{
-            top: -25,
-          }}
-        >
-          <TextInput
-            autoCapitalize="none"
-            keyboardType="number-pad"
-            autoFocus={true}
-            style={styles.input}
-          />
-
+    <ScrollView>
+      <TouchableWithoutFeedback
+        onPress={() => {
+          Keyboard.dismiss();
+        }}
+      >
+        <View style={styles.container}>
           <Text
             style={{
-              top: -40,
-
-              fontFamily: "Poppins",
-              fontSize: 18,
+              textAlign: "center",
+              fontSize: 30,
+              top: -90,
+              fontFamily: "Comfortaa",
+              lineHeight: 50,
+              color: "#F2F2F2",
             }}
           >
             {" "}
-            USD
+            Pay your Friend 🤝
           </Text>
-        </View>
 
-        <TouchableOpacity
-          onPress={handlePayment}
-          disabled={loading}
-          style={styles.Button}
-        >
           <Text
-            style={{ fontFamily: "Poppins", fontSize: 24, color: "#0F4D92" }}
+            style={{
+              fontSize: 20,
+              top: -90,
+              fontFamily: "Comfortaa",
+              lineHeight: 50,
+              color: "#F2F2F2",
+              left: -6,
+            }}
           >
-            Pay
+            {" "}
+            Easy. Smooth. Quick.
           </Text>
-        </TouchableOpacity>
-      </View>
-    </TouchableWithoutFeedback>
+          <View
+            style={{
+              top: -10,
+            }}
+          >
+            <TextInput
+              autoCapitalize="none"
+              placeholder="Enter your e-mail"
+              keyboardType="email-address"
+              onChange={(value) => setEmail(value.nativeEvent.text)}
+              style={styles.input}
+              autoFocus={true}
+            />
+
+            <Image
+              source={require("../assets/email.png")}
+              resizeMode="contain"
+              style={{
+                width: 35,
+                height: 35,
+                top: -40,
+                left: 5,
+              }}
+            />
+          </View>
+
+          <View
+            style={{
+              top: -40,
+            }}
+          >
+            <CardField
+              placeholder={{ number: "4242 4242 4242 4242" }}
+              cardStyle={styles.card}
+              style={styles.cardContainer}
+              onCardChange={(cardDetails) => {
+                setCardDetails(cardDetails);
+              }}
+            />
+          </View>
+          <View
+            style={{
+              top: -35,
+            }}
+          >
+            <TextInput
+              autoCapitalize="none"
+              placeholder="Receiver's Account Number"
+              keyboardType="number-pad"
+              style={styles.input}
+              autoFocus={false}
+            />
+
+            <Image
+              source={require("../assets/crediti.png")}
+              resizeMode="contain"
+              style={{
+                width: 30,
+                height: 30,
+                top: -40,
+                left: 5,
+              }}
+            />
+          </View>
+
+          <View
+            style={{
+              top: -25,
+            }}
+          >
+            <TextInput
+              autoCapitalize="none"
+              keyboardType="number-pad"
+              autoFocus={false}
+              style={styles.input}
+            />
+
+            <Text
+              style={{
+                top: -40,
+
+                fontFamily: "Poppins",
+                fontSize: 18,
+              }}
+            >
+              {" "}
+              USD
+            </Text>
+          </View>
+
+          <TouchableOpacity
+            onPress={handlePayment}
+            disabled={loading}
+            style={styles.Button}
+          >
+            <Text
+              style={{ fontFamily: "Poppins", fontSize: 24, color: "#0F4D92" }}
+            >
+              Pay
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </TouchableWithoutFeedback>
+    </ScrollView>
   );
 };
 export default CardPay;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: heightPercentageToDP("100%"),
     backgroundColor: "#0F4D92",
     alignItems: "center",
     justifyContent: "center",

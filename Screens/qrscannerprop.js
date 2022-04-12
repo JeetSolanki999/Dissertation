@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Text, View, StyleSheet, Button, TouchableOpacity } from "react-native";
 import { BarCodeScanner } from "expo-barcode-scanner";
+import {
+  heightPercentageToDP,
+  widthPercentageToDP,
+} from "react-native-responsive-screen";
 
 export default function qrscanner() {
   const [hasPermission, setHasPermission] = useState(null);
@@ -45,9 +49,10 @@ export default function qrscanner() {
 
 const styles = StyleSheet.create({
   container: {
-    height: "60%",
-    width: "60%",
-    right: "5%",
+    height: heightPercentageToDP("30%"),
+    width: widthPercentageToDP("65%"),
+    left: 9,
+    top: 9,
   },
 
   text: {
@@ -59,12 +64,11 @@ const styles = StyleSheet.create({
   button: {
     left: 60,
     borderRadius: 10,
-    bottom: -430,
+    bottom: -310,
     width: "60%",
-    height: "15%",
-    backgroundColor: "#903",
+    height: "19%",
+    backgroundColor: "#fff",
     padding: 10,
-
     justifyContent: "center",
   },
 });

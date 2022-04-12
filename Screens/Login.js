@@ -46,6 +46,7 @@ const Login = ({ navigation }) => {
           navigation.replace("Tabs");
         })
         .catch((error) => {
+          alert(error.message);
           console.log(error);
         });
     } else {

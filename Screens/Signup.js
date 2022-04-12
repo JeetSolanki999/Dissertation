@@ -29,13 +29,6 @@ const Signup = ({ navigation }) => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isChecked, setIsChecked] = useState(false);
 
-  const clickHandler = () => {
-    if (isChecked === true) {
-      navigation.navigate("Tabs");
-    } else {
-      alert("Please accept the terms and conditions");
-    }
-  };
   const register = () => {
     const db = getDatabase();
     auth
@@ -273,7 +266,8 @@ const Signup = ({ navigation }) => {
 
           <View style={styles.Button}>
             <TouchableOpacity
-              onPress={register} //!!change to clickHandler
+              onPress={register}
+              disabled={!isChecked}
               onPressOut={() =>
                 Haptics.notificationAsync(
                   Haptics.NotificationFeedbackType.Success

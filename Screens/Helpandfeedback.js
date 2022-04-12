@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  Form,
+} from "react-native";
 import { Input } from "react-native-elements";
 import { TextInput } from "react-native-gesture-handler";
 import { Linking } from "react-native";
@@ -10,13 +17,16 @@ import {
 import Rating from "./Rating";
 
 const Helpandfeedback = ({ navigation }) => {
+  const sendEmail = async () => {
+    Linking.openURL("mailto:js150@hw.ac.uk");
+  };
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate("Tabs")}>
         <Image
           source={require("../assets/WhiteArrow_Icon.png")}
           resizeMode="contain"
-          style={{ height: 29, width: 28, top: 90, right: 185 }}
+          style={{ height: 29, width: 28, top: 75, right: 185 }}
         />
       </TouchableOpacity>
 
@@ -26,7 +36,7 @@ const Helpandfeedback = ({ navigation }) => {
           style={{
             fontFamily: "Comfortaa",
             fontSize: 16,
-            textAlign: "left",
+            textAlign: "justify",
             top: 20,
             lineHeight: 30,
             paddingRight: 20,
@@ -35,8 +45,16 @@ const Helpandfeedback = ({ navigation }) => {
           {" "}
           Hi there, {"\n"}
           {"\n"} This is my first phone based application. {"\n"} I would love
-          to hear your feedback! {"\n"} You can either mailto js150@hw.ac.uk or{" "}
-          {"\n"} send any message via the feedback {"\n"} form. {"\n"} {"\n"}
+          to hear your feedback! {"\n"} You can either mailto{" "}
+          <Text
+            onPress={sendEmail}
+            style={{
+              color: "#0F4D92",
+            }}
+          >
+            js150@hw.ac.uk
+          </Text>{" "}
+          or {"\n"} send any message via the feedback {"\n"} form. {"\n"} {"\n"}
           Thanks, {" \n"} JS.
         </Text>
 
