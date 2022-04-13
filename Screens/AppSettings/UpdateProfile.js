@@ -10,12 +10,11 @@ import {
   TextInputBase,
   TouchableWithoutFeedback,
   Keyboard,
-} from "react-native";
+} from "react-native"; //../firebase
 
 import React, { useState, useEffect } from "react";
-
 import { getDatabase, ref, onValue, set, update } from "firebase/database";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 
 const Profile = ({ navigation }) => {
   const [fname, setFname] = useState("");
@@ -58,7 +57,7 @@ const Profile = ({ navigation }) => {
         <View style={styles.circle}></View>
         <View style={styles.profilec}>
           <Image
-            source={require("../assets/icons/blueuser.png")}
+            source={require("../../assets/icons/blueuser.png")}
             style={{
               width: 80,
               height: 80,
@@ -69,7 +68,7 @@ const Profile = ({ navigation }) => {
 
           <TouchableOpacity onPress={() => navigation.navigate("Tabs")}>
             <Image
-              source={require("../assets/icons/left-arrow.png")}
+              source={require("../../assets/icons/left-arrow.png")}
               style={{
                 width: 29,
                 height: 28,

@@ -13,9 +13,9 @@ import {
 } from "react-native";
 import { Input } from "react-native-elements";
 import React, { useState, useEffect } from "react";
-import Picker from "./picker";
+
 import { getDatabase, ref, onValue } from "firebase/database";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 
 const Profile = () => {
   const [fname, setFname] = useState("");
@@ -47,7 +47,7 @@ const Profile = () => {
         <View style={styles.circle}></View>
         <View style={styles.profilec}>
           <Image
-            source={require("../assets/icons/blueuser.png")}
+            source={require("../../assets/icons/blueuser.png")}
             style={{
               width: 80,
               height: 80,

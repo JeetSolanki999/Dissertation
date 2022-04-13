@@ -120,7 +120,7 @@ const CardPay = () => {
             />
 
             <Image
-              source={require("../assets/icons/email.png")}
+              source={require("../../assets/icons/email.png")}
               resizeMode="contain"
               style={{
                 width: 35,
@@ -159,7 +159,7 @@ const CardPay = () => {
             />
 
             <Image
-              source={require("../assets/icons/crediti.png")}
+              source={require("../../assets/icons/crediti.png")}
               resizeMode="contain"
               style={{
                 width: 30,

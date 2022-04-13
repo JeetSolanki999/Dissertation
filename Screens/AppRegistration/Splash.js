@@ -4,7 +4,7 @@ import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from "react-native-responsive-screen";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 
 const Splash = ({ navigation }) => {
   const loginChecker = () => {

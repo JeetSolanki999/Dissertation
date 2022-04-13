@@ -7,7 +7,7 @@ import {
   TextInput,
 } from "react-native";
 import React from "react";
-import QR from "./qrscannerprop";
+import QR from "../Props/qrscannerprop";
 import {
   heightPercentageToDP,
   widthPercentageToDP,

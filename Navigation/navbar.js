@@ -8,11 +8,11 @@ import {
 } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Wallet from "../Screens/Wallet";
-import CardPay from "../Screens/CardPay";
-import QRNFC from "../Screens/QrNfc";
-import Profile from "../Screens/Profile";
-import Settings from "../Screens/Settings";
+import Wallet from "../Screens/AppFeatures/Wallet";
+import CardPay from "../Screens/AppFeatures/CardPay";
+import QRNFC from "../Screens/AppFeatures/QrNfc";
+import Profile from "../Screens/AppFeatures/Profile";
+import Settings from "../Screens/AppSettings/Settings";
 
 const Tab = createBottomTabNavigator();
 

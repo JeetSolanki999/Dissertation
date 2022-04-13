@@ -14,7 +14,7 @@ import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from "react-native-responsive-screen";
-import Rating from "./Rating";
+import Rating from "../Props/Rating";
 
 const Helpandfeedback = ({ navigation }) => {
   const sendEmail = async () => {
@@ -24,7 +24,7 @@ const Helpandfeedback = ({ navigation }) => {
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate("Tabs")}>
         <Image
-          source={require("../assets/icons/WhiteArrow_Icon.png")}
+          source={require("../../assets/icons/WhiteArrow_Icon.png")}
           resizeMode="contain"
           style={{ height: 29, width: 28, top: 75, right: 185 }}
         />

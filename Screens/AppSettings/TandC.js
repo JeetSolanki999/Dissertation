@@ -17,7 +17,7 @@ const TandC = ({ navigation }) => {
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate("Tabs")}>
         <Image
-          source={require("../assets/icons/WhiteArrow_Icon.png")}
+          source={require("../../assets/icons/WhiteArrow_Icon.png")}
           resizeMode="contain"
           style={{ height: 29, width: 28, right: -10, top: 75 }}
         />

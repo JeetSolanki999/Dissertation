@@ -19,7 +19,7 @@ import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from "react-native-responsive-screen";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const Login = ({ navigation }) => {
@@ -80,7 +80,7 @@ const Login = ({ navigation }) => {
         <View style={styles.bg}>
           <TouchableOpacity onPress={() => navigation.navigate("Splash")}>
             <Image
-              source={require("../assets/icons/WhiteArrow_Icon.png")}
+              source={require("../../assets/icons/WhiteArrow_Icon.png")}
               resizeMode="contain"
               style={{
                 width: 29,
@@ -118,7 +118,7 @@ const Login = ({ navigation }) => {
             />
             <View style={styles.pic}>
               <Image
-                source={require("../assets/icons/email.png")}
+                source={require("../../assets/icons/email.png")}
                 resizeMode="contain"
                 style={{
                   width: 29,
@@ -155,12 +155,12 @@ const Login = ({ navigation }) => {
             >
               {isSecureEntry ? (
                 <Image
-                  source={require("../assets/icons/show.png")}
+                  source={require("../../assets/icons/show.png")}
                   style={{ height: 25, width: 25, bottom: 215, left: 335 }}
                 />
               ) : (
                 <Image
-                  source={require("../assets/icons/hide.png")}
+                  source={require("../../assets/icons/hide.png")}
                   style={{ height: 25, width: 25, bottom: 215, left: 335 }}
                 />
               )}
@@ -246,7 +246,7 @@ const Login = ({ navigation }) => {
                 </Text>
                 <Image
                   style={{ height: 25, width: 25, marginLeft: 10 }}
-                  source={require("../assets/icons/Google_Icon.png")}
+                  source={require("../../assets/icons/Google_Icon.png")}
                 />
               </View>
             </TouchableOpacity>
@@ -259,7 +259,7 @@ const Login = ({ navigation }) => {
                 </Text>
                 <Image
                   style={{ height: 25, width: 25, marginLeft: 5 }}
-                  source={require("../assets/icons/facebook.png")}
+                  source={require("../../assets/icons/facebook.png")}
                 />
               </View>
             </TouchableOpacity>
