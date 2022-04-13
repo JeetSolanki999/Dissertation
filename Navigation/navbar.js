@@ -49,7 +49,7 @@ const Tabs = () => {
               }}
             >
               <Image
-                source={require("../assets/wallet.png")}
+                source={require("../assets/icons/wallet.png")}
                 resizeMode="contain"
                 style={{
                   width: 40,
@@ -95,7 +95,7 @@ const Tabs = () => {
               }}
             >
               <Image
-                source={require("../assets/money.png")}
+                source={require("../assets/icons/money.png")}
                 resizeMode="contain"
                 style={{
                   width: 40,
@@ -134,7 +134,7 @@ const Tabs = () => {
               }}
             >
               <Image
-                source={require("../assets/Scan_Icon.png")}
+                source={require("../assets/icons/Scan_Icon.png")}
                 resizeMode="contain"
                 style={{
                   width: 50,
@@ -173,7 +173,7 @@ const Tabs = () => {
               }}
             >
               <Image
-                source={require("../assets/user.png")}
+                source={require("../assets/icons/user.png")}
                 resizeMode="contain"
                 style={{
                   width: 40,
@@ -212,7 +212,7 @@ const Tabs = () => {
               }}
             >
               <Image
-                source={require("../assets/settings.png")}
+                source={require("../assets/icons/settings.png")}
                 resizeMode="contain"
                 style={{
                   width: 35,

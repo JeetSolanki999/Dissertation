@@ -10,7 +10,6 @@ import Helpandfeedback from "./Screens/Helpandfeedback";
 import UpdateProfile from "./Screens/UpdateProfile";
 import Settings from "./Screens/Settings";
 import registerNNPushToken from "native-notify";
-
 import TandC from "./Screens/TandC";
 
 import { StripeProvider } from "@stripe/stripe-react-native";

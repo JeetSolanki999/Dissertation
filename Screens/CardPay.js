@@ -89,7 +89,7 @@ const CardPay = () => {
             }}
           >
             {" "}
-            Pay your Friend 🤝
+            Pay a Friend 🤝
           </Text>
 
           <Text
@@ -99,7 +99,7 @@ const CardPay = () => {
               fontFamily: "Comfortaa",
               lineHeight: 50,
               color: "#F2F2F2",
-              left: -6,
+              left: 0,
             }}
           >
             {" "}
@@ -120,7 +120,7 @@ const CardPay = () => {
             />
 
             <Image
-              source={require("../assets/email.png")}
+              source={require("../assets/icons/email.png")}
               resizeMode="contain"
               style={{
                 width: 35,
@@ -159,7 +159,7 @@ const CardPay = () => {
             />
 
             <Image
-              source={require("../assets/crediti.png")}
+              source={require("../assets/icons/crediti.png")}
               resizeMode="contain"
               style={{
                 width: 30,
@@ -191,7 +191,7 @@ const CardPay = () => {
               }}
             >
               {" "}
-              USD
+              AED
             </Text>
           </View>
 

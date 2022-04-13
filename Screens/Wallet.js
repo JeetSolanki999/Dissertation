@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
-import Tabs from "../Navigation/navbar";
 import Walletani from "./walletani";
 
 const Wallet = ({ navigation }) => {
@@ -12,7 +11,7 @@ const Wallet = ({ navigation }) => {
         }}
       >
         <Image
-          source={require("../assets/plus.png")}
+          source={require("../assets/icons/plus.png")}
           resizeMode="contain"
           style={{
             width: 40,

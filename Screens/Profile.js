@@ -37,7 +37,6 @@ const Profile = () => {
     });
   };
 
-  const [selectedValue, setSelectedValue] = useState("java");
   return (
     <TouchableWithoutFeedback
       onPress={() => {
@@ -48,7 +47,7 @@ const Profile = () => {
         <View style={styles.circle}></View>
         <View style={styles.profilec}>
           <Image
-            source={require("../assets/blueuser.png")}
+            source={require("../assets/icons/blueuser.png")}
             style={{
               width: 80,
               height: 80,

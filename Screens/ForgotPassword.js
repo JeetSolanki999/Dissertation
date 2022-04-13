@@ -24,7 +24,7 @@ const ForgotPassword = ({ navigation }) => {
       <View style={styles.bg}>
         <TouchableOpacity onPress={() => navigation.navigate("Login")}>
           <Image
-            source={require("../assets/WhiteArrow_Icon.png")}
+            source={require("../assets/icons/WhiteArrow_Icon.png")}
             resizeMode="contain"
             style={{
               width: 29,
@@ -36,7 +36,7 @@ const ForgotPassword = ({ navigation }) => {
         </TouchableOpacity>
 
         <Image
-          source={require("../assets/forgot-password.png")}
+          source={require("../assets/icons/forgot-password.png")}
           resizeMode="contain"
           style={{
             width: 209,
@@ -82,7 +82,7 @@ const ForgotPassword = ({ navigation }) => {
         />
         <View style={styles.pic}>
           <Image
-            source={require("../assets/email.png")}
+            source={require("../assets/icons/email.png")}
             resizeMode="contain"
             style={{
               width: 29,

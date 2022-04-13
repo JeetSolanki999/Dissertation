@@ -56,7 +56,7 @@ const QrNfc = () => {
           }}
         >
           {" "}
-          USD
+          AED
         </Text>
 
         <View style={styles.card}>

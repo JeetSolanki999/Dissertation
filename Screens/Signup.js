@@ -56,7 +56,7 @@ const Signup = ({ navigation }) => {
         <View style={styles.bg}>
           <TouchableOpacity onPress={() => navigation.navigate("Splash")}>
             <Image
-              source={require("../assets/WhiteArrow_Icon.png")}
+              source={require("../assets/icons/WhiteArrow_Icon.png")}
               resizeMode="contain"
               style={{
                 width: 29,
@@ -100,7 +100,7 @@ const Signup = ({ navigation }) => {
 
               <View>
                 <Image
-                  source={require("../assets/user.png")}
+                  source={require("../assets/icons/user.png")}
                   resizeMode="contain"
                   style={{
                     width: 25,
@@ -130,7 +130,7 @@ const Signup = ({ navigation }) => {
               />
 
               <Image
-                source={require("../assets/user.png")}
+                source={require("../assets/icons/user.png")}
                 resizeMode="contain"
                 style={{
                   width: 25,
@@ -165,7 +165,7 @@ const Signup = ({ navigation }) => {
                 onChangeText={(text) => setEmail(text)}
               />
               <Image
-                source={require("../assets/email.png")}
+                source={require("../assets/icons/email.png")}
                 resizeMode="contain"
                 style={{
                   width: 29,
@@ -207,12 +207,12 @@ const Signup = ({ navigation }) => {
               >
                 {isSecureEntry ? (
                   <Image
-                    source={require("../assets/show.png")}
+                    source={require("../assets/icons/show.png")}
                     style={{ height: 25, width: 25, top: -490, left: 340 }}
                   />
                 ) : (
                   <Image
-                    source={require("../assets/hide.png")}
+                    source={require("../assets/icons/hide.png")}
                     style={{ height: 25, width: 25, top: -490, left: 340 }}
                   />
                 )}
@@ -251,12 +251,12 @@ const Signup = ({ navigation }) => {
               >
                 {isSecureEntry ? (
                   <Image
-                    source={require("../assets/show.png")}
+                    source={require("../assets/icons/show.png")}
                     style={{ height: 25, width: 25, top: -615, left: 340 }}
                   />
                 ) : (
                   <Image
-                    source={require("../assets/hide.png")}
+                    source={require("../assets/icons/hide.png")}
                     style={{ height: 25, width: 25, top: -615, left: 340 }}
                   />
                 )}

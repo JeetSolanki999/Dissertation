@@ -37,7 +37,7 @@ const Settings = ({ navigation }) => {
         </TouchableOpacity>
         <View style={styles.line}></View>
         <Image
-          source={require("../assets/settingsuser.png")}
+          source={require("../assets/icons/settingsuser.png")}
           style={styles.image}
         />
         <View style={{ flexDirection: "row" }}>
@@ -58,14 +58,14 @@ const Settings = ({ navigation }) => {
         <View style={styles.line}></View>
 
         <Image
-          source={require("../assets/Notifications.png")}
+          source={require("../assets/icons/Notifications.png")}
           style={styles.image}
         />
 
         <Text style={styles.text}> Accessibility Settings </Text>
         <View style={styles.line}></View>
         <Image
-          source={require("../assets/accessibility.png")}
+          source={require("../assets/icons/accessibility.png")}
           style={styles.image}
         />
 
@@ -75,13 +75,13 @@ const Settings = ({ navigation }) => {
           <Text style={styles.text}> Help and Feedback </Text>
         </TouchableOpacity>
         <View style={styles.line}></View>
-        <Image source={require("../assets/Help.png")} style={styles.image} />
+        <Image source={require("../assets/icons/Help.png")} style={styles.image} />
 
         <TouchableOpacity onPress={() => navigation.navigate("TandC")}>
           <Text style={styles.text}> Terms and Conditions</Text>
         </TouchableOpacity>
         <View style={styles.line}></View>
-        <Image source={require("../assets/tandc.png")} style={styles.image} />
+        <Image source={require("../assets/icons/tandc.png")} style={styles.image} />
       </View>
 
       <View style={styles.Button}>
