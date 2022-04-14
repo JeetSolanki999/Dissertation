@@ -194,9 +194,7 @@ const Signup = ({ navigation }) => {
                   fontSize: 14,
                 }}
                 placeholder="Enter your password"
-                type="password"
                 secureTextEntry={isSecureEntry}
-                autoCapitalize="none"
                 value={password}
                 onChangeText={(text) => setPassword(text)}
               />
@@ -237,9 +235,7 @@ const Signup = ({ navigation }) => {
                   fontSize: 14,
                 }}
                 placeholder="Confirm your password"
-                type="confirmPassword"
                 secureTextEntry={isSecureEntry}
-                autoCapitalize="none"
                 value={confirmPassword}
                 onChangeText={(text) => setConfirmPassword(text)}
                 onSubmitEditing={register}

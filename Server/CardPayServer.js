@@ -1,4 +1,4 @@
-import express, { response } from "express";
+import express from "express";
 
 const app = express();
 const port = 19001;
@@ -11,13 +11,13 @@ app.listen(port, () => {
 });
 import Stripe from "stripe";
 
-const stripe = Stripe(SECRET_KEY, { apiVersion: "2020-08-27" });
+const cardpayment = Stripe(SECRET_KEY, { apiVersion: "2020-08-27" });
 
 app.post("/create-payment-intent", async (req, res) => {
   try {
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: 1099,
-      currency: "usd",
+    const paymentIntent = await cardpayment.paymentIntents.create({
+      amount: 20000,
+      currency: "aed",
       payment_method_types: ["card"],
     });
 

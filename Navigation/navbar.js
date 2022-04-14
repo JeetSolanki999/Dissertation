@@ -72,14 +72,6 @@ const Tabs = () => {
             </View>
           ),
         }}
-        // listeners={({ navigation, focused }) => ({
-        //   tabPress: (e) => {
-        //     Animated.spring(tabOffsetValue, {
-        //       toValue: getWidth,
-        //       useNativeDriver: true,
-        //     }).start();
-        //   },
-        // })}
       />
 
       <Tab.Screen

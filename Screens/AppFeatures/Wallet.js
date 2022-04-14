@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
-import Walletani from "../Props/walletani";
+import Animation from "../Props/WalletAnimation";
 
 const Wallet = ({ navigation }) => {
   return (
@@ -33,7 +33,7 @@ const Wallet = ({ navigation }) => {
         {" "}
         Wallet{" "}
       </Text>
-      <Walletani />
+      <Animation />
     </View>
   );
 };
