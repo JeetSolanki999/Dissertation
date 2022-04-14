@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
-import { auth } from "../../firebase";
+import { auth } from "../../Server/firebase";
 
 const ForgotPassword = ({ navigation }) => {
   const [email, setemail] = useState("");

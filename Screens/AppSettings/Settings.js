@@ -8,7 +8,7 @@ import {
   Switch,
 } from "react-native";
 import React, { useState } from "react";
-import { auth } from "../../firebase";
+import { auth } from "../../Server/firebase";
 import registerNNPushToken from "native-notify";
 
 const Settings = ({ navigation }) => {

@@ -1,7 +1,7 @@
 import * as firebase from "firebase/compat";
 import "firebase/firestore";
 import "firebase/auth";
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 const firebaseConfig = {
   apiKey: "AIzaSyAESWJjOik4dlkSiANkyNYJqmzT-eQg9j4",
   authDomain: "digi-pocket-1f456.firebaseapp.com",
@@ -18,14 +18,6 @@ if (firebase.apps.length === 0) {
 } else {
   app = firebase.app();
 }
-
-// const logout = document.querySelector("#logout");
-// logout.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   auth.signOut().then(() => {
-//     console.log("logged out");
-//   });
-// });
 
 const db = app.firestore();
 const auth = firebase.auth();

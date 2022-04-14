@@ -19,7 +19,7 @@ import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from "react-native-responsive-screen";
-import { auth } from "../../firebase";
+import { auth } from "../../Server/firebase";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const Login = ({ navigation }) => {

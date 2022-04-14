@@ -17,7 +17,7 @@ import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from "react-native-responsive-screen";
-import { auth } from "../../firebase";
+import { auth } from "../../Server/firebase";
 import { getDatabase, ref, set } from "firebase/database";
 
 const Signup = ({ navigation }) => {

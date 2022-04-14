@@ -15,7 +15,7 @@ import { Input } from "react-native-elements";
 import React, { useState, useEffect } from "react";
 
 import { getDatabase, ref, onValue } from "firebase/database";
-import { auth } from "../../firebase";
+import { auth } from "../../Server/firebase";
 
 const Profile = () => {
   const [fname, setFname] = useState("");
