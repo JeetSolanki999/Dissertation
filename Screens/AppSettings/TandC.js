@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     fontFamily: "Comfortaa",
     color: "#fff",
     alignItems: "center",
-    top: 110,
+    top: 90,
     left: 32,
   },
 
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 15,
     left: 22,
-    top: 150,
+    top: 130,
     shadowOffset: {
       width: 0,
       height: 10,

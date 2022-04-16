@@ -43,10 +43,9 @@ const Profile = ({ navigation }) => {
       fname,
       lname,
     });
-    alert("Profile Updated");
+    alert("Profile Updated Successfully");
   };
 
-  const [selectedValue, setSelectedValue] = useState("java");
   return (
     <TouchableWithoutFeedback
       onPress={() => {

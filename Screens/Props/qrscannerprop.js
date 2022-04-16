@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, StyleSheet, Button, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { BarCodeScanner } from "expo-barcode-scanner";
 import {
   heightPercentageToDP,
@@ -17,9 +17,9 @@ export default function qrscanner() {
     })();
   }, []);
 
-  const handleBarCodeScanned = ({ type, data }) => {
+  const handleBarCodeScanned = ({ type, data, amount }) => {
     setScanned(true);
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    alert(`Amount of AED 100 has been paid to ${data}`);
   };
 
   if (hasPermission === null) {
@@ -40,7 +40,16 @@ export default function qrscanner() {
           onPress={() => setScanned(false)}
           style={styles.button}
         >
-          <Text style={styles.text}> Scan again </Text>
+          <Image
+            source={require("../../assets/icons/qr-code-scan.png")}
+            style={{
+              width: 29,
+              height: 28,
+              left: 5,
+              top: 16,
+            }}
+          />
+          <Text style={styles.text}> Rescan </Text>
         </TouchableOpacity>
       )}
     </View>
@@ -59,6 +68,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
     fontFamily: "Poppins",
+    color: "#0F4D92",
+    top: -13,
+    left: 10,
   },
 
   button: {

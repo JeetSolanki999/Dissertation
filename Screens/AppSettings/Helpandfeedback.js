@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -7,6 +7,7 @@ import {
   Image,
   Form,
 } from "react-native";
+
 import { Input } from "react-native-elements";
 import { TextInput } from "react-native-gesture-handler";
 import { Linking } from "react-native";
@@ -19,6 +20,11 @@ import Rating from "../Props/Rating";
 const Helpandfeedback = ({ navigation }) => {
   const sendEmail = async () => {
     Linking.openURL("mailto:js150@hw.ac.uk");
+  };
+  const [text, setText] = useState("");
+  const emptyField = () => {
+    setText("");
+    alert("Thank you for your feedback!");
   };
   return (
     <View style={styles.container}>
@@ -50,6 +56,8 @@ const Helpandfeedback = ({ navigation }) => {
             onPress={sendEmail}
             style={{
               color: "#0F4D92",
+              fontFamily: "Poppins",
+              textAlign:"justify"
             }}
           >
             js150@hw.ac.uk
@@ -65,11 +73,15 @@ const Helpandfeedback = ({ navigation }) => {
             height: heightPercentageToDP("5%"),
             borderRadius: 5,
             backgroundColor: "#EAEAED",
-            paddingLeft: 10,
             fontFamily: "Comfortaa",
             fontSize: 14,
+            paddingTop: 15,
+            paddingLeft: 15,
           }}
           placeholder="Write something"
+          onChangeText={(text) => setText(text)}
+          value={text}
+          multiline={true}
         />
 
         <View style={styles.star}>
@@ -84,6 +96,21 @@ const Helpandfeedback = ({ navigation }) => {
             - Please leave a Rating -{" "}
           </Text>
           <Rating rating={3} />
+        </View>
+
+        <View style={styles.Button}>
+          <TouchableOpacity onPress={emptyField}>
+            <Text
+              style={{
+                textAlign: "center",
+                color: "#0F4D92",
+                fontSize: 24,
+                fontFamily: "Poppins",
+              }}
+            >
+              Submit Review
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -106,7 +133,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 15,
     alignItems: "center",
-    top: 150,
+    top: 110,
     shadowOffset: {
       width: 0,
       height: 10,
@@ -115,12 +142,29 @@ const styles = StyleSheet.create({
     shadowRadius: 3.5,
   },
 
+  Button: {
+    backgroundColor: "#fff",
+    borderRadius: 15,
+
+    width: 313,
+    height: 70,
+    justifyContent: "center",
+    fontSize: 200,
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.5,
+    top: 130,
+  },
+
   h1: {
     fontSize: 30,
     fontFamily: "Comfortaa",
     color: "#fff",
     alignItems: "center",
-    top: 110,
+    top: 90,
   },
 
   star: {

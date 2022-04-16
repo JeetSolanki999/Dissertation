@@ -43,6 +43,7 @@
     "react-native-nfc-manager": "^3.13.2",
     "react-native-payment-card": "^1.0.61",
     "react-native-qrcode-scanner-view": "^2.0.0",
+    "react-native-ratings": "^8.1.0",
     "react-native-reanimated": "~2.3.1",
     "react-native-responsive-screen": "^1.4.2",
     "react-native-safe-area-context": "3.3.2",

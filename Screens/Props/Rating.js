@@ -48,17 +48,17 @@ export default class Helpandfeedback extends React.Component {
       outputRange: ["0deg", "-3deg", "3deg", "0deg"],
     });
 
-    for (let x = 1; x <= this.state.numStars; x++) {
+    for (let j = 1; j <= this.state.numStars; j++) {
       stars.push(
         <TouchableWithoutFeedback
-          key={x}
+          key={j}
           onPress={() => {
-            this.rate(x), this.animate();
+            this.rate(j), this.animate();
           }}
         >
-          <Animated.View style={x <= this.state.rating ? animationStyle : ""}>
+          <Animated.View style={j <= this.state.rating ? animationStyle : ""}>
             <Star
-              filled={x <= this.state.rating ? true : false}
+              filled={j <= this.state.rating ? true : false}
               color={this.state.starColor}
             />
           </Animated.View>

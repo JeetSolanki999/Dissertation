@@ -16,7 +16,7 @@ const cardpayment = Stripe(SECRET_KEY, { apiVersion: "2020-08-27" });
 app.post("/create-payment-intent", async (req, res) => {
   try {
     const paymentIntent = await cardpayment.paymentIntents.create({
-      amount: 20000,
+      amount: 2000000,
       currency: "aed",
       payment_method_types: ["card"],
     });

@@ -13,11 +13,12 @@ import registerNNPushToken from "native-notify";
 
 const Settings = ({ navigation }) => {
   const [isEnabled, setIsEnabled] = useState(false);
-
+  registerNNPushToken(2466, "O7r9KWeqgC96mlfbLCHdih");
   const logOut = () => {
     auth
       .signOut()
       .then(() => {
+        alert("You have successfully logged out!");
         navigation.replace("Splash");
       })
       .catch((error) => {

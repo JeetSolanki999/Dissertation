@@ -82,7 +82,7 @@ const Profile = () => {
               color: "#000",
             }}
             value={fname}
-            onChangeText={setFname}
+            //onChangeText={setFname}
           />
           <View
             style={{
@@ -101,7 +101,7 @@ const Profile = () => {
               color: "#000",
             }}
             value={lname}
-            onChangeText={setLname}
+            // onChangeText={setLname}
           />
           <View
             style={{
@@ -120,7 +120,7 @@ const Profile = () => {
               color: "#000",
             }}
             value={email}
-            onChangeText={setEmail}
+            //onChangeText={setEmail}
           />
           <View
             style={{
