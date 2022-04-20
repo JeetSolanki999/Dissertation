@@ -5,37 +5,23 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
-  Button,
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
-import { KeyboardAvoidingView } from "react-native";
-import Splash from "./Splash";
 import * as Haptics from "expo-haptics";
-import { ScaledSheet } from "react-native-size-matters";
 import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from "react-native-responsive-screen";
 import { auth } from "../../Server/firebase";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+// import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSecureEntry, setIsSecureEntry] = useState(true);
-
-  useEffect(() => {
-    // const unsubscribe = auth.onAuthStateChanged((authUser) => {
-    //   console.log(authUser);
-    //   if (authUser) {
-    //     navigation.replace("Tabs");
-    //   }
-    // });
-    // return unsubscribe();
-  }, []);
 
   const login = () => {
     if (email && password) {
@@ -54,21 +40,21 @@ const Login = ({ navigation }) => {
     }
   };
 
-  const googleLogin = () => {
-    const provider = new GoogleAuthProvider();
-    const auth = getAuth();
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        console.log(result);
-        const credentials = GoogleAuthProvider.credentialFromResult(result);
-        const token = credentials.accessToken;
-        const user = result.user;
-        // navigation.replace("Tabs");
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
-  };
+  // const googleLogin = () => {   # Future Implementation
+  //   const provider = new GoogleAuthProvider();
+  //   const auth = getAuth();
+  //   signInWithPopup(auth, provider)
+  //     .then((result) => {
+  //       console.log(result);
+  //       const credentials = GoogleAuthProvider.credentialFromResult(result);
+  //       const token = credentials.accessToken;
+  //       const user = result.user;
+  //       // navigation.replace("Tabs");
+  //     })
+  //     .catch((error) => {
+  //       alert(error.message);
+  //     });
+  // };
 
   return (
     <ScrollView>

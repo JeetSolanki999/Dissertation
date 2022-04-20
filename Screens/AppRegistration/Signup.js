@@ -11,8 +11,8 @@ import {
 import * as Haptics from "expo-haptics";
 import React, { useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
-import { Input, CheckBox } from "react-native-elements";
-import PasswordInputText from "react-native-hide-show-password-input";
+import { CheckBox } from "react-native-elements";
+
 import {
   heightPercentageToDP,
   widthPercentageToDP,

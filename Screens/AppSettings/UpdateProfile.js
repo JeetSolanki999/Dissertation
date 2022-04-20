@@ -2,18 +2,15 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
-  ScrollView,
   Image,
   TouchableOpacity,
   TextInput,
-  TextInputBase,
   TouchableWithoutFeedback,
   Keyboard,
-} from "react-native"; //../firebase
+} from "react-native";
 
 import React, { useState, useEffect } from "react";
-import { getDatabase, ref, onValue, set, update } from "firebase/database";
+import { getDatabase, ref, onValue, set } from "firebase/database";
 import { auth } from "../../Server/firebase";
 
 const Profile = ({ navigation }) => {

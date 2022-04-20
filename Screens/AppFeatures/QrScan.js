@@ -1,11 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  ScrollView,
-  TextInput,
-} from "react-native";
+import { StyleSheet, Text, View, ScrollView, TextInput } from "react-native";
 import React from "react";
 import QR from "../Props/qrscannerprop";
 import {

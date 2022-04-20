@@ -1,19 +1,18 @@
-import { StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from "react-native-responsive-screen";
-import { auth } from "../../Server/firebase";
 
 const Splash = ({ navigation }) => {
-  const loginChecker = () => {
-    let user = auth.currentUser;
-    if (user) {
-      navigation.replace("Tabs");
-    } else {
-    }
-  };
+  // const loginChecker = () => {
+  //   let user = auth.currentUser;
+  //   if (user) {
+  //     navigation.replace("Tabs");
+  //   } else {
+  //   }
+  // };
 
   return (
     <View style={styles.container}>

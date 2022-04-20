@@ -2,7 +2,6 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
   TextInput,
   Alert,
   TouchableOpacity,
@@ -12,11 +11,7 @@ import {
   Image,
 } from "react-native";
 import React, { useState } from "react";
-import {
-  CardField,
-  useConfirmPayment,
-  CardFieldInput,
-} from "@stripe/stripe-react-native";
+import { CardField, useConfirmPayment } from "@stripe/stripe-react-native";
 import {
   heightPercentageToDP,
   widthPercentageToDP,

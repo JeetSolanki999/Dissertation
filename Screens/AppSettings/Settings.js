@@ -2,7 +2,7 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
+
   Image,
   TouchableOpacity,
   Switch,

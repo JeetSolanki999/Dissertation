@@ -2,16 +2,12 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
-  ScrollView,
   Image,
-  TouchableOpacity,
   TextInput,
-  TextInputBase,
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import { Input } from "react-native-elements";
+
 import React, { useState, useEffect } from "react";
 
 import { getDatabase, ref, onValue } from "firebase/database";

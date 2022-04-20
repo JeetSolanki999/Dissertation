@@ -1,16 +1,9 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  StatusBar,
-} from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Wallet from "../Screens/AppFeatures/Wallet";
 import CardPay from "../Screens/AppFeatures/CardPay";
-import QRNFC from "../Screens/AppFeatures/QrNfc";
+import QR from "../Screens/AppFeatures/QrScan";
 import Profile from "../Screens/AppFeatures/Profile";
 import Settings from "../Screens/AppSettings/Settings";
 
@@ -114,7 +107,7 @@ const Tabs = () => {
 
       <Tab.Screen
         name="QR/NFC"
-        component={QRNFC}
+        component={QR}
         options={{
           tabBarIcon: ({ focused }) => (
             <View

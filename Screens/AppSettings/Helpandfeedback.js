@@ -1,14 +1,6 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-  Form,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 
-import { Input } from "react-native-elements";
 import { TextInput } from "react-native-gesture-handler";
 import { Linking } from "react-native";
 import {
@@ -57,7 +49,7 @@ const Helpandfeedback = ({ navigation }) => {
             style={{
               color: "#0F4D92",
               fontFamily: "Poppins",
-              textAlign:"justify"
+              textAlign: "justify",
             }}
           >
             js150@hw.ac.uk
